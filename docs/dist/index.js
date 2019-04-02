@@ -1,10 +1,10 @@
 'use strict';
 
+require('./js/5days.js');
+
 require('./js/searchbar.js');
 
 require('./js/current.js');
-
-require('./js/5days.js');
 
 require('./js/diagrams.js');
 

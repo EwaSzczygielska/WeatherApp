@@ -54,19 +54,18 @@ for large cities and megalopolises geographically expanded(use these parameter o
             "dt_txt": "2014-07-23 09:00:00"
         }]
     } */
+var cityID = 524901;
 var appID = 'ed35929be75cc2d35d7f745115549c49';
 var units = 'metric';
 var weather;
+var http = require('http');
+var url = 'https://api.openweathermap.org/data/2.5/forecast?id=524901&units=metric&APPID=ed35929be75cc2d35d7f745115549c49';
+var server = http.createServer(function (request, response) {
+    var request = require('request');
+    request(url, function (err, response, body) {
+        var data = JSON.parse(body);
+        response.write(cod);
+        response.end();
+    });
+}).listen(8081);
 console.log('hello');
-function setup() {
-    fetch('https://api.openweathermap.org/data/2.5/forecast?id=524901&APPID=ed35929be75cc2d35d7f745115549c49').then(results);
-};
-
-function getData(data) {
-    weather = data;
-};
-
-function write() {
-    console.log(weather);
-};
-write();
