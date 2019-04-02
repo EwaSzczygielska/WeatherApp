@@ -1,3 +1,5 @@
+'use strict';
+
 //http://api.openweathermap.org/data/2.5/forecast?q=London&APPID=ed35929be75cc2d35d7f745115549c49
 //list.main.humidity Humidity, %
 //list.dt Time of data forecasted, unix, UTC
@@ -52,8 +54,8 @@ for large cities and megalopolises geographically expanded(use these parameter o
             "dt_txt": "2014-07-23 09:00:00"
         }]
     } */
-let appID = 'ed35929be75cc2d35d7f745115549c49';
-let units= 'metric';
+var appID = 'ed35929be75cc2d35d7f745115549c49';
+var units = 'metric';
 var weather;
 console.log('hello');
 function setup() {
@@ -64,7 +66,7 @@ function getData(data) {
     weather = data;
 };
 
-function write(){
+function write() {
     console.log(weather);
 };
 write();
