@@ -15,11 +15,12 @@
     <link rel="shortcut icon" href="./src/img/logo.png">
     <title>Weather App</title>
 </head>
-
 <body>
-    <nav class="searchbar">
-        <input class="searchlist" placeholder="Write city name or code..."></input>
-    </nav>
+    <div class="row form-group form-inline center justify-content-center">
+        <input type="text" name="city" id="city" class="form-control" placeholder="Write city name here...">
+        <button id="submitCity" class="btn btn-primary">Search</button>
+    </div>
+    <span id="error"></span>
     <main>
         <div class="current">
             <div class="curr-temp">
@@ -105,13 +106,13 @@
     </main>
     <footer></footer>
 
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     </script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
     </script>
     <script src="./dist/bundle.js" type="text/javascript"></script>
+    <script src="./src/js/searchbar.js"></script>
+    <script src="./src/js/current.js"></script>
 </body>
-
 </html>
