@@ -57,13 +57,9 @@ let appID = 'ed35929be75cc2d35d7f745115549c49';
 let units = 'metric';
 var weather;
 var http = require('http');
-var url = (`https://api.openweathermap.org/data/2.5/forecast?id=524901&units=metric&APPID=ed35929be75cc2d35d7f745115549c49`);
-var server = http.createServer(function (request, response) {
-    var request = require('request');
-    request(url, function (err, response, body) {
-        var data = JSON.parse(body);
-        response.write(cod);
-        response.end();
-    });
-}).listen(8081);
+const fetch = require('node-fetch');
+var url = (`https://api.openweathermap.org/data/2.5/forecast?id=${cityID}&units=metric&APPID=${appID}`);
+fetch(url)
+    .then(resp => resp.json())
+    .then(resp => console.log(resp));
 console.log('hello');
