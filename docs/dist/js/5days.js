@@ -56,18 +56,13 @@ for large cities and megalopolises geographically expanded(use these parameter o
     } */
 var city = "wroclaw";
 var appID = 'ed35929be75cc2d35d7f745115549c49';
-var units = 'metric';
 var day = 'numeric';
-var month = 'long';
-var year = 'numeric';
-var weekday = 'short';
-var timezone = 'UTC';
-var hour = 'numeric';
-var minute = 'numeric';
-var second = 'numeric';
+var weekDay = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
+var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 var weather;
 var data;
-var newDay = 864000;
+var newDay = 86400;
+var i = 0;
 
 //const fetch = require('node-fetch');
 var url = 'https://api.openweathermap.org/data/2.5/forecast?q=' + city + '&units=metric&APPID=' + appID;
@@ -77,16 +72,12 @@ fetch(url).then(function (resp) {
     console.log(data);
     console.log(data.city.country);
     day = data.list[0].dt;
-    console.log(day);
-    function formatDate(day) {
-        var monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-
-        var dayx = day.getDate();
-        var monthIndex = day.getMonth();
-        var year = day.getFullYear();
-
-        return dayx + ' ' + monthNames[monthIndex] + ' ' + year;
+    for (i = 0; i < 5; i++) {
+        day = day + newDay;
+        console.log(day);
+        var newDate = new Date(day * 1000);
+        console.log(newDate.getDate());
+        console.log(months[newDate.getMonth()]);
+        console.log(weekDay[newDate.getDay()]);
     }
-
-    console.log(formatDate(new Date()));
 });
