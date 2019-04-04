@@ -4,10 +4,16 @@
   "description": "Weather app showing current weather and forecast for 5 days.",
   "main": "index.js",
   "scripts": {
-    "build": "babel src -d dist"
+    "build": "webpack"
   },
   "scripts": {
-    "build": "webpack"
+    "build": "browserify"
+  },
+   "scripts": {
+     "build": "requirejs"
+   },
+  "scripts": {
+    "build": "babel src -d dist"
   },
   "scripts": {
     "build": "babel --presets es2015 src -d dist"
@@ -16,6 +22,7 @@
   "license": "ISC",
   "dependencies": {
     "ajax": "0.0.4",
+    "browserify": "^16.2.3",
     "node-fetch": "^2.3.0",
     "requirejs": "^2.3.6",
     "webpack": "^4.29.6"

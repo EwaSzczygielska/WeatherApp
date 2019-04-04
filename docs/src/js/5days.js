@@ -66,7 +66,7 @@ let second = 'numeric';
 var weather;
 
 
-const fetch = require('node-fetch');
+//const fetch = require('node-fetch');
 var url = (`https://api.openweathermap.org/data/2.5/forecast?id=${cityID}&units=metric&APPID=${appID}`);
 fetch(url)
     .then(resp => resp.json())
