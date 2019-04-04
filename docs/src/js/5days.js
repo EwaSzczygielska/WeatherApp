@@ -55,12 +55,19 @@ for large cities and megalopolises geographically expanded(use these parameter o
 let city = "wroclaw";
 let appID = 'ed35929be75cc2d35d7f745115549c49';
 let day = 'numeric';
-var weekDay = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
+var weekDay = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 var weather;
 var data;
-var newDay = 86400;
-var i = 0;
+var oneDay = 86400;
+var threeHours = 10800000;
+var newDate;
+var newDate1;
+var tempMax = -100;
+var tempMin = 100;
+var i;
+var j;
+var n = -5;
 
 //const fetch = require('node-fetch');
 var url = (`https://api.openweathermap.org/data/2.5/forecast?q=${city}&units=metric&APPID=${appID}`);
@@ -71,11 +78,24 @@ fetch(url)
         console.log(data.city.country)
         day = data.list[0].dt;
         for (i = 0; i < 5; i++) {
-            day = day + newDay;
+            day = day + oneDay;
             console.log(day);
-            var newDate = new Date(day * 1000);
-            console.log(newDate.getDate());
-            console.log(months[newDate.getMonth()]);
-            console.log(weekDay[newDate.getDay()]);
+            newDate = new Date(day * 1000);
+            console.log(weekDay[newDate.getDay()], newDate.getDate(), months[newDate.getMonth()]);
+            newDate1 = new Date(`${newDate.getFullYear()}-${newDate.getMonth()}-${newDate.getDate()}`);
+            newDate1 = newDate1.getTime() - threeHours;
+            n = n + 5;
+            for (j = n; j < (n + 8); j++) {
+                if (data.list[j].main.temp_min < tempMin) {
+                    tempMin = data.list[j].main.temp_min
+                };
+                if (data.list[j].main.temp_max > tempMax) {
+                    tempMax = data.list[j].main.temp_max
+                };
+            }
+            console.log(tempMax);
+            console.log(tempMin);
+
+
         }
     });
