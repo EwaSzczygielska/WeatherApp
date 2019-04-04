@@ -70,15 +70,8 @@ const fetch = require('node-fetch');
 var url = (`https://api.openweathermap.org/data/2.5/forecast?id=${cityID}&units=metric&APPID=${appID}`);
 fetch(url)
     .then(resp => resp.json())
-    .then(resp => console.log(resp));
-console.log('hello');
+    .then(data => console.log(data));
 
-function gotData(data){
-    weather=data;
-}
-
-function write(){
-    console.log(weather.main.temp);}
 
 
 /*function 5daysforecast() {

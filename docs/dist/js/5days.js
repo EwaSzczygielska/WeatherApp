@@ -67,21 +67,13 @@ var minute = 'numeric';
 var second = 'numeric';
 var weather;
 
+var fetch = require('node-fetch');
 var url = 'https://api.openweathermap.org/data/2.5/forecast?id=' + cityID + '&units=metric&APPID=' + appID;
 fetch(url).then(function (resp) {
     return resp.json();
-}).then(function (resp) {
-    return console.log(resp);
+}).then(function (data) {
+    return console.log(data);
 });
-console.log('hello');
-
-function gotData(data) {
-    weather = data;
-}
-
-function write() {
-    console.log(weather.main.temp);
-}
 
 /*function 5daysforecast() {
     for (let i = 0; i < 5; i++) {
