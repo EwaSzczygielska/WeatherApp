@@ -4,7 +4,7 @@
   "description": "Weather app showing current weather and forecast for 5 days.",
   "main": "index.js",
   "scripts": {
-    "start": "webpack --config webpack.config.js"
+    "build": "webpack"
   },
   "scripts": {
     "build": "babel --presets es2015 src -d dist"

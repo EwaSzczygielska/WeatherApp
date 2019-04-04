@@ -55,11 +55,36 @@ for large cities and megalopolises geographically expanded(use these parameter o
 let cityID = 524901;
 let appID = 'ed35929be75cc2d35d7f745115549c49';
 let units = 'metric';
+let day = 'numeric';
+let month = 'long';
+let year = 'numeric';
+let weekday = 'short';
+let timezone = 'UTC';
+let hour = 'numeric';
+let minute = 'numeric';
+let second = 'numeric';
 var weather;
-var http = require('http');
+
+
 const fetch = require('node-fetch');
 var url = (`https://api.openweathermap.org/data/2.5/forecast?id=${cityID}&units=metric&APPID=${appID}`);
 fetch(url)
     .then(resp => resp.json())
     .then(resp => console.log(resp));
 console.log('hello');
+
+function gotData(data){
+    weather=data;
+}
+
+function write(){
+    console.log(weather.main.temp);}
+
+
+/*function 5daysforecast() {
+    for (let i = 0; i < 5; i++) {
+        if (i >= 1) {
+            time ++;
+        }
+    }
+}*/
