@@ -1,3 +1,5 @@
+'use strict';
+
 //http://api.openweathermap.org/data/2.5/forecast?q=London&APPID=ed35929be75cc2d35d7f745115549c49
 //list.main.humidity Humidity, %
 //list.dt Time of data forecasted, unix, UTC
@@ -52,34 +54,35 @@ for large cities and megalopolises geographically expanded(use these parameter o
             "dt_txt": "2014-07-23 09:00:00"
         }]
     } */
-let cityID = 524901;
-let appID = 'ed35929be75cc2d35d7f745115549c49';
-let units = 'metric';
-let day = 'numeric';
-let month = 'long';
-let year = 'numeric';
-let weekday = 'short';
-let timezone = 'UTC';
-let hour = 'numeric';
-let minute = 'numeric';
-let second = 'numeric';
+var cityID = 524901;
+var appID = 'ed35929be75cc2d35d7f745115549c49';
+var units = 'metric';
+var day = 'numeric';
+var month = 'long';
+var year = 'numeric';
+var weekday = 'short';
+var timezone = 'UTC';
+var hour = 'numeric';
+var minute = 'numeric';
+var second = 'numeric';
 var weather;
 
-
-const fetch = require('node-fetch');
-var url = (`https://api.openweathermap.org/data/2.5/forecast?id=${cityID}&units=metric&APPID=${appID}`);
-fetch(url)
-    .then(resp => resp.json())
-    .then(resp => console.log(resp));
+var fetch = require('node-fetch');
+var url = 'https://api.openweathermap.org/data/2.5/forecast?id=' + cityID + '&units=metric&APPID=' + appID;
+fetch(url).then(function (resp) {
+    return resp.json();
+}).then(function (resp) {
+    return console.log(resp);
+});
 console.log('hello');
 
-function gotData(data){
-    weather=data;
+function gotData(data) {
+    weather = data;
 }
 
-function write(){
-    console.log(weather.main.temp);}
-
+function write() {
+    console.log(weather.main.temp);
+}
 
 /*function 5daysforecast() {
     for (let i = 0; i < 5; i++) {
