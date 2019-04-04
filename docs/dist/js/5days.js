@@ -54,7 +54,7 @@ for large cities and megalopolises geographically expanded(use these parameter o
             "dt_txt": "2014-07-23 09:00:00"
         }]
     } */
-var cityID = 524901;
+var city = "wroclaw";
 var appID = 'ed35929be75cc2d35d7f745115549c49';
 var units = 'metric';
 var day = 'numeric';
@@ -66,19 +66,27 @@ var hour = 'numeric';
 var minute = 'numeric';
 var second = 'numeric';
 var weather;
+var data;
+var newDay = 864000;
 
 //const fetch = require('node-fetch');
-var url = 'https://api.openweathermap.org/data/2.5/forecast?id=' + cityID + '&units=metric&APPID=' + appID;
+var url = 'https://api.openweathermap.org/data/2.5/forecast?q=' + city + '&units=metric&APPID=' + appID;
 fetch(url).then(function (resp) {
     return resp.json();
 }).then(function (data) {
-    return console.log(data);
-});
+    console.log(data);
+    console.log(data.city.country);
+    day = data.list[0].dt;
+    console.log(day);
+    function formatDate(day) {
+        var monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 
-/*function 5daysforecast() {
-    for (let i = 0; i < 5; i++) {
-        if (i >= 1) {
-            time ++;
-        }
+        var dayx = day.getDate();
+        var monthIndex = day.getMonth();
+        var year = day.getFullYear();
+
+        return dayx + ' ' + monthNames[monthIndex] + ' ' + year;
     }
-}*/
+
+    console.log(formatDate(new Date()));
+});
