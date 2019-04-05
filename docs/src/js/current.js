@@ -17,6 +17,7 @@ function currentWeather(city){
             let pressure = data.main.pressure;
             let humidity = data.main.humidity;
             let windSpeed = data.wind.speed;
+
             let feelsLike = 0.045 * (Math.pow(5.27, 0.5) + 10.45 - 0.28 * windSpeed) * (temperature - 33) + 33;
 
             tempVal.textContent = Math.round(temperature);
@@ -24,7 +25,7 @@ function currentWeather(city){
             infoList.innerHTML =
             `
             <div class="row">
-                <li class="col-sm-3">Feels Like ${feelsLike}°C</li>          
+                <li class="col-sm-3">Feels Like ${Math.round(feelsLike)}°C</li>          
                 <li class="col-sm-3">Pressure ${pressure} hPa</li>
             </div>
             <div class="row">
