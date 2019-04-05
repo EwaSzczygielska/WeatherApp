@@ -1,6 +1,4 @@
-//http://api.openweathermap.org/data/2.5/forecast?q=London&APPID=ed35929be75cc2d35d7f745115549c49
-//import {city} from './searchbar.js';
-var city = 'wroclaw';
+function fiveDays(city) {
 let appID = 'ed35929be75cc2d35d7f745115549c49';
 let units = 'metric'
 let day;
@@ -126,4 +124,4 @@ fetch(url)
             minimumtemp[i].innerHTML = `${tempMin}&deg C`;
             humidity[i].innerHTML = `${hum}%`;
         }
-    });
+    });}
