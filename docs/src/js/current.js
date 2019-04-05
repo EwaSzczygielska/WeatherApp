@@ -7,7 +7,6 @@ function currentWeather(city){
     var tempUnitChange = document.querySelector('#temp-unit-change');
     var sky = document.querySelector('#sky');
     var infoList = document.querySelector('#info-list');
-    var iconCode;
 
     var url = (`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=${units}&APPID=${appID}`);
     fetch(url)
