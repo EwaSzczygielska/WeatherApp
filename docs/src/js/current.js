@@ -1,6 +1,5 @@
 function currentWeather(city){
     var appID = "0e3713180683cf2f0424d6d8a2c2ebe2";
-    let currentCity = city;
     let units = 'metric'
 
     var tempVal = document.querySelector('#temp-val');
@@ -8,7 +7,6 @@ function currentWeather(city){
     var tempUnitChange = document.querySelector('#temp-unit-change');
     var sky = document.querySelector('#sky');
     var infoList = document.querySelector('#info-list');
-    var iconCode;
 
     var url = (`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=${units}&APPID=${appID}`);
     fetch(url)
