@@ -12,7 +12,13 @@ $(document).ready(function () {
                 type: "GET",
                 dataType: "jsonp",
                 success:function(data){
+<<<<<<< Updated upstream
                     currentWeather(data);
+=======
+                    curcity=data;
+                    currentWeather(city);
+                    $("#nameofcity").html(city);
+>>>>>>> Stashed changes
                 }
             });
               $.ajax({
@@ -40,6 +46,7 @@ $(document).ready(function () {
                     console.log(curcity);
                     currentWeather(data);
                     $("#error").html('');
+                    $("#nameofcity").html(city);
                 },
                 error:function(data)
                 {
