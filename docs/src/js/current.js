@@ -2,7 +2,6 @@
 //conts{currentWeather} = require('./current.js');
 
 function currentWeather(data){
-
     //var appID = "0e3713180683cf2f0424d6d8a2c2ebe2";
 
     var tempVal = $('#temp-val');
