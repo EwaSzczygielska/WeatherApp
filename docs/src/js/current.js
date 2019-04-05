@@ -1,6 +1,5 @@
-
-
-console.log(curcity)
+console.log(curcity);
+console.log(city);
 
 function currentWeather(objectData){
     console.log(objectData);
@@ -25,7 +24,7 @@ function currentWeather(objectData){
             iconCode = curcity.weather[0].icon;
             infoList.innerHTML =
             `
-             <div class="row">
+            <div class="row">
                 <li class="col-sm-3">Feels Like ${Math.round(curcity.main.temp)}°C</li>          
                 <li class="col-sm-3">Pressure ${curcity.main.pressure} hPa</li>
             </div>
