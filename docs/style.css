@@ -20,7 +20,7 @@ hr{
     width: 20px;
 }
 
-main .current{
+main .current div{
     border: 3px solid red;
 }
 
