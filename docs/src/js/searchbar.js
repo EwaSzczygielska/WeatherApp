@@ -13,6 +13,7 @@ $(document).ready(function () {
                 dataType: "jsonp",
                 success:function(data){
                     currentWeather(data);
+                    fiveDays(data);
                     $("#error").html('');
                     $("#nameofcity").html('Wrocław');
                 }
@@ -41,6 +42,7 @@ $(document).ready(function () {
                     console.log(city);
                     console.log(curcity);
                     currentWeather(data);
+                    fiveDays(data);
                     $("#error").html('');
                     $("#nameofcity").html(city);
                 },
@@ -81,4 +83,3 @@ $(document).ready(function () {
     });
 })
 
-//export {city};

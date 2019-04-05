@@ -1,49 +1,42 @@
 'use strict';
 
-console.log(curcity);
-console.log(city);
-
-function currentWeather(objectData) {
-    console.log(objectData);
-    var appID = "0e3713180683cf2f0424d6d8a2c2ebe2";
-    var city = 'miami';
-    var units = 'metric';
+function currentWeather(data) {
 
     var tempVal = document.querySelector('#temp-val');
-    var tempUnit = document.querySelector('#temp-unit');
-    var tempUnitChange = document.querySelector('#temp-unit-change');
     var sky = document.querySelector('#sky');
     var infoList = document.querySelector('#info-list');
-    var iconCode;
 
-    //var url = (`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=${units}&APPID=${appID}`);
-    //fetch(url)
-    //   .then(resp => resp.json())
-    //    .then(data => {
-    tempVal.textContent = Math.round(curcity.main.temp);
-    sky.textContent = curcity.weather[0].description;
-    iconCode = curcity.weather[0].icon;
-    infoList.innerHTML = '\n            <div class="row">\n                <li class="col-sm-3">Feels Like ' + Math.round(curcity.main.temp) + '\xB0C</li>          \n                <li class="col-sm-3">Pressure ' + curcity.main.pressure + ' hPa</li>\n            </div>\n            <div class="row">\n                <li class="col-sm-3">Humidity ' + curcity.main.humidity + '%</li>\n                <li class="col-sm-3">Wind ' + curcity.wind.speed + ' m/s</li>    \n            </div> \n            ';
-    //    });
+    var temperature = data.main.temp;
+    var description = data.weather[0].description;
+    var pressure = data.main.pressure;
+    var humidity = data.main.humidity;
+    var windSpeed = data.wind.speed;
 
-    //<li class="col-sm">Wind direction ${data.wind.deg}°</li>
+    var feelsLike = 0.045 * (Math.pow(5.27, 0.5) + 10.45 - 0.28 * windSpeed) * (temperature - 33) + 33;
 
-    //Changing unit
-    tempUnitChange.click(function (fun) {
-        var temp = 1 * tempVal.textContent;
-        var unit = tempUnit.textContent;
-        var unitAlt = tempUnitChange.textContent;
-
-        if (unit === "°C") {
-            temp = temp * 9 / 5 + 32;
-        } else {
-            temp = (temp - 32) * 5 / 9;
-        }
-
-        tempVal.textContent = temp;
-        tempUnit.textContent = unitAlt;
-        tempUnitChange.textContent = unit;
-    });
+    tempVal.textContent = Math.round(temperature);
+    sky.textContent = description;
+    infoList.innerHTML = '\n    <div class="row">\n        <li class="col-sm-3">Feels Like ' + Math.round(feelsLike) + '\xB0C</li>          \n        <li class="col-sm-3">Pressure ' + pressure + ' hPa</li>\n    </div>\n    <div class="row">\n        <li class="col-sm-3">Humidity ' + humidity + '%</li>\n        <li class="col-sm-3">Wind ' + windSpeed + ' m/s</li>    \n    </div> \n    ';
 }
 
-currentWeather("a");
+//Changing unit
+var tempVal = document.querySelector('#temp-val');
+var tempUnit = document.querySelector('#temp-unit');
+var tempUnitChange = document.querySelector('#temp-unit-change');
+
+tempUnitChange.addEventListener('click', function () {
+    console.log("Changing unit");
+    var temp = 1 * tempVal.textContent;
+    var unit = tempUnit.textContent;
+    var unitAlt = tempUnitChange.textContent;
+
+    if (unit === "°C") {
+        temp = temp * 9 / 5 + 32;
+    } else {
+        temp = (temp - 32) * 5 / 9;
+    }
+
+    tempVal.textContent = temp;
+    tempUnit.textContent = unitAlt;
+    tempUnitChange.textContent = unit;
+});
