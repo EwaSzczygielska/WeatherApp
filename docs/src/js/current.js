@@ -1,6 +1,5 @@
-function currentWeather(city){
+function currentWeather(data){
     var appID = "0e3713180683cf2f0424d6d8a2c2ebe2";
-    let units = 'metric'
 
     var tempVal = document.querySelector('#temp-val');
     var tempUnit = document.querySelector('#temp-unit');
@@ -8,10 +7,10 @@ function currentWeather(city){
     var sky = document.querySelector('#sky');
     var infoList = document.querySelector('#info-list');
 
-    var url = (`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=${units}&APPID=${appID}`);
-    fetch(url)
-       .then(resp => resp.json())
-        .then(data => {
+    //var url = (`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=${units}&APPID=${appID}`);
+    //fetch(url)
+       //.then(resp => resp.json())
+        //.then(data => {
             let temperature = data.main.temp;
             let description = data.weather[0].description;
             let pressure = data.main.pressure;
@@ -33,7 +32,7 @@ function currentWeather(city){
                 <li class="col-sm-3">Wind ${windSpeed} m/s</li>    
             </div> 
             `;
-        });
+        //});
    
 //Changing unit
     tempUnitChange.click(fun  => {
