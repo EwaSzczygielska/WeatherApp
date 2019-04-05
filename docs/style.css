@@ -16,9 +16,20 @@ main{
     border: 3px solid red;
 }
 
+
+#temp-val{
+    font-size: 70px;
+}
+
+#sky{
+    font-size: 30px;
+}
+
+
 hr{
     width: 20px;
 }
+
 
 main .current div{
     border: 3px solid red;
@@ -27,3 +38,8 @@ main .current div{
 main .current div div {
     border: 3px solid blue;
 }
+
+main .current .info-box #info-list{
+    list-style: none;
+}
+

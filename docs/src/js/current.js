@@ -16,20 +16,25 @@ function currentWeather(objectData){
     fetch(url)
         .then(resp => resp.json())
         .then(data => {
-            tempVal.textContent = data.main.temp;
+            tempVal.textContent = Math.round(data.main.temp);
             sky.textContent = data.weather[0].description;
             iconCode = data.weather[0].icon;
             infoList.innerHTML =
             `
-                <li>Feels Like ${data.main.temp}°C</li>          
-                <li>Pressure ${data.main.pressure} hPa</li>
-                <li>Humidity ${data.main.humidity}%</li>
-                <li>Wind ${data.wind.speed} m/s</li>    
-                <li>Wind direction ${data.wind.deg}°</li>
+             <div class="row">
+                <li class="col-sm-3">Feels Like ${Math.round(data.main.temp)}°C</li>          
+                <li class="col-sm-3">Pressure ${data.main.pressure} hPa</li>
+            </div>
+            <div class="row">
+                <li class="col-sm-3">Humidity ${data.main.humidity}%</li>
+                <li class="col-sm-3">Wind ${data.wind.speed} m/s</li>    
+            </div> 
             `;
         });
 
-    //Changing unit
+//<li class="col-sm">Wind direction ${data.wind.deg}°</li>
+   
+//Changing unit
     tempUnitChange.click(fun  => {
         var temp = 1*tempVal.textContent;
         var unit = tempUnit.textContent;
