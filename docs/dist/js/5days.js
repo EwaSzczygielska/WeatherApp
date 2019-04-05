@@ -2,7 +2,7 @@
 
 //http://api.openweathermap.org/data/2.5/forecast?q=London&APPID=ed35929be75cc2d35d7f745115549c49
 //import {city} from './searchbar.js';
-var city = 'wroclaw';
+var city = 'miami';
 var appID = 'ed35929be75cc2d35d7f745115549c49';
 var units = 'metric';
 var day = void 0;
@@ -22,12 +22,22 @@ var hum;
 var i;
 var j;
 var n = -5;
+var weatharray;
+var maxarray;
 
 var dayofweek = document.querySelectorAll('.dayofweek');
 var date = document.querySelectorAll('.date');
 var maximumtemp = document.querySelectorAll('.max-temp');
 var minimumtemp = document.querySelectorAll('.min-temp');
 var humidity = document.querySelectorAll('.humidity');
+var weatherIcon = document.querySelector('.weather-icon');
+
+var thunder = document.querySelector('.thunder-cloud');
+var rain = document.querySelector('.rain-cloud');
+var snow = document.querySelector('.snow-cloud');
+var halfsun = document.querySelector('.sun-cloud');
+var sun = document.querySelector('.sunshine');
+var cloud = document.querySelector('.windy-cloud');
 
 //const fetch = require('node-fetch');
 var url = 'https://api.openweathermap.org/data/2.5/forecast?q=' + city + '&units=' + units + '&APPID=' + appID;
@@ -51,6 +61,7 @@ fetch(url).then(function (resp) {
         hum = 0;
         tempMax = -100;
         tempMin = 100;
+        weatharray = [0, 0, 0, 0, 0, 0];
         for (j = n; j < n + 8; j++) {
             if (data.list[j].main.temp_max > tempMax) {
                 tempMax = data.list[j].main.temp_max;
@@ -59,7 +70,50 @@ fetch(url).then(function (resp) {
                 tempMin = data.list[j].main.temp_min;
             };
             hum = hum + data.list[j].main.humidity;
+            console.log(data.list[j].weather[0].id);
+            if (data.list[j].weather[0].id > 199 && data.list[j].weather[0].id < 233) {
+                weatharray[0]++;
+            } else if (data.list[j].weather[0].id > 299 && data.list[j].weather[0].id < 532) {
+                weatharray[1]++;
+            } else if (data.list[j].weather[0].id > 599 && data.list[j].weather[0].id < 623) {
+                weatharray[2]++;
+            } else if (data.list[j].weather[0].id > 699 && data.list[j].weather[0].id < 782) {
+                weatharray[3]++;
+            } else if (data.list[j].weather[0].id == 800) {
+                weatharray[4]++;
+            } else {
+                weatharray[5]++;
+            }
         }
+        console.log(weatharray);
+        maxarray = Math.max.apply(null, weatharray);
+        switch (maxarray) {
+            case weatharray[0]:
+                weatherIcon[i] = "thunder1";
+                console.log(weatherIcon[i]);
+                break;
+            case weatharray[1]:
+                weatherIcon[i] = "thunder2";
+                console.log(weatherIcon[i]);
+                break;
+            case weatharray[2]:
+                weatherIcon[i] = "thunder3";
+                console.log(weatherIcon[i]);
+                break;
+            case weatharray[3]:
+                weatherIcon[i] = "thunder4";
+                console.log(weatherIcon[i]);
+                break;
+            case weatharray[4]:
+                weatherIcon[i] = "thunder5";
+                console.log(weatherIcon[i]);
+                break;
+            case weatharray[5]:
+                weatherIcon[i] = "thunder6";
+                console.log(weatherIcon[i]);
+                break;
+        }
+
         tempMax = Math.round(tempMax * 10) / 10;
         tempMin = Math.round(tempMin * 10) / 10;
         hum = Math.round(hum / 8);
