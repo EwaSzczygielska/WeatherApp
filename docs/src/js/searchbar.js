@@ -12,6 +12,7 @@ $(document).ready(function () {
                 dataType: "jsonp",
                 success:function(data){
                     curcity=data;
+                    currentWeather(city);
                 }
             });
               $.ajax({
@@ -22,6 +23,7 @@ $(document).ready(function () {
                       dayscity = data;
                   }
               });
+
 
     $('#submitCity').click(function () {
 
@@ -37,6 +39,7 @@ $(document).ready(function () {
                     curcity=data;
                     console.log(city);
                     console.log(curcity);
+                    currentWeather(city);
                     $("#error").html('');
                 },
                 error:function(data)
