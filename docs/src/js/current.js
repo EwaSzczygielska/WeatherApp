@@ -1,10 +1,4 @@
-console.log(curcity);
-console.log(city);
-
-currentWeather();
-$('#submitCity').click(currentWeather)
-
-function currentWeather(){
+function currentWeather(city){
     var appID = "0e3713180683cf2f0424d6d8a2c2ebe2";
     let currentCity = city;
     let units = 'metric'
