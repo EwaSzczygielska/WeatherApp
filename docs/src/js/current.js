@@ -10,8 +10,7 @@ function currentWeather(data){
     let humidity = data.main.humidity;
     windSpeed = Math.round(data.wind.speed * 3.6);
 
-    let feelsLike = Math.round(0.045 * (Math.pow(5.27, 0.5) + 10.45 - 0.28 * windSpeed) * (temperature - 33) + 33);
-
+    let feelsLike = Math.round(13.12 + 0.6215 * temperature - 11.37 * Math.pow(windSpeed, 0.16) + 0.3965 * temperature * Math.pow(windSpeed, 0.16));
     tempVal.textContent = Math.round(temperature);
     sky.textContent = description;
     infoList.innerHTML =
@@ -32,6 +31,7 @@ function currentWeather(data){
     tempFeelsLikeUnit = document.querySelector('#feel-temp-unit');
 }
 
+
 //Changing units
 var tempVal = document.querySelector('#temp-val');
 var tempUnit = document.querySelector('#temp-unit');
@@ -42,7 +42,7 @@ var windSpeedValue;
 var windSpeedUnit;
 
 tempUnitChange.addEventListener('click', function(){
-    console.log("Changing unit");
+
     var temp = 1*tempVal.textContent;
     var unit = tempUnit.textContent;
     var unitAlt = tempUnitChange.textContent;
