@@ -1,4 +1,4 @@
-conts{currentWeather} = require('./current.js');
+conts{currentWeather} = require('./docs/src/js/current.js');
 
 var city;
 var curcity;
