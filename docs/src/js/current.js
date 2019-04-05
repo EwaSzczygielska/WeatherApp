@@ -2,15 +2,16 @@
 //import currentWeather from 'current'
 
 export default function currentWeather(objectData){
+    console.log(objectData);
     var appID = "0e3713180683cf2f0424d6d8a2c2ebe2";
     let city = 'miami';
     let units = 'metric'
 
-    var tempVal = $('#temp-val');
-    var tempUnit = $('#temp-unit');
-    var tempUnitChange = $('#temp-unit-change');
-    var sky = $('#sky');
-    var infoList = $('info-list');
+    var tempVal = document.querySelector('#temp-val');
+    var tempUnit = document.querySelector('#temp-unit');
+    var tempUnitChange = document.querySelector('#temp-unit-change');
+    var sky = document.querySelector('#sky');
+    var infoList = document.querySelector('#info-list');
     var iconCode;
 
 
@@ -49,12 +50,4 @@ export default function currentWeather(objectData){
     });   
 }
 
-city = "wroclaw";
-$.ajax({
-            url: "http://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=fc68321f36609fbd9dcd3f318740aa8a",
-            type: "GET",
-            dataType: "jsonp",
-            success: function (data) {
-                currentWeather(data);
-            }
-        });
+currentWeather("a");
