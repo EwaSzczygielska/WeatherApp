@@ -1,4 +1,4 @@
-var city="wroclaw";
+var city;
 var curcity;
 var dayscity;
 var mapcity;
