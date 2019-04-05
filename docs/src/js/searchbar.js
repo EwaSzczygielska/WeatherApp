@@ -1,5 +1,3 @@
-import currentWeather from 'current'
-
 var city;
 var curcity;
 var dayscity;
