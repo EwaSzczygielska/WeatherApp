@@ -25,15 +25,17 @@
     <main>
         <div class="current">
             <div class="curr-temp">
-                <p class="temp"></p>
-                <p class="sky"></p>
-                <div>
-                    <p class="info"></p>
-                    <p class="info"></p>
-                    <p class="info"></p>
-                    <p class="info"></p>
-                    <p class="info"></p>
-                    <p class="info"></p>
+                <div class="temp">
+                    <p id="temp-val"></p>
+                    <div>
+                        <p id="temp-unit">°C</p>
+                        <hr>
+                        <p id="temp unit-change">°F</p>  <!-- or a --> 
+                    </div>
+                </div>
+                <div id="info-box">
+                    <p id="sky"></p>
+                    <ul id="info-list"></ul>
                 </div>
             </div>
         </div>
