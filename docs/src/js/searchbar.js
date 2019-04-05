@@ -12,7 +12,6 @@ $(document).ready(function () {
                 dataType: "jsonp",
                 success:function(data){
                     curcity=data;
-                    currentWeather(data);
                 }
             });
               $.ajax({
@@ -36,7 +35,6 @@ $(document).ready(function () {
                 success:function(data){
                     city=city1;
                     curcity=data;
-                    currentWeather(data);
                     console.log(city);
                     console.log(curcity);
                     $("#error").html('');

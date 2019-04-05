@@ -1,4 +1,4 @@
-export default function currentWeather(objectData){
+function currentWeather(objectData){
     console.log(objectData);
     var appID = "0e3713180683cf2f0424d6d8a2c2ebe2";
     let city = 'miami';
