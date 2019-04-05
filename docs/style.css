@@ -18,7 +18,11 @@ main{
 
 
 #temp-val{
-    font-size: 70px;
+    font-size: 90px;
+}
+
+#temp-unit{
+    font-size: 40px;
 }
 
 #sky{
