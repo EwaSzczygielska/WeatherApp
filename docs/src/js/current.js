@@ -1,6 +1,3 @@
-//---Paste to destination .js ---  
-//import currentWeather from 'current'
-
 export default function currentWeather(objectData){
     console.log(objectData);
     var appID = "0e3713180683cf2f0424d6d8a2c2ebe2";
