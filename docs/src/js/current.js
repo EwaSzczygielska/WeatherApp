@@ -1,8 +1,6 @@
 function currentWeather(data){
-
+    
     var tempVal = document.querySelector('#temp-val');
-    var tempUnit = document.querySelector('#temp-unit');
-    var tempUnitChange = document.querySelector('#temp-unit-change');
     var sky = document.querySelector('#sky');
     var infoList = document.querySelector('#info-list');
 
@@ -27,22 +25,26 @@ function currentWeather(data){
         <li class="col-sm-3">Wind ${windSpeed} m/s</li>    
     </div> 
     `;
-    
-    //Changing unit
-    tempUnitChange.click(fun  => {
-        var temp = 1*tempVal.textContent;
-        var unit = tempUnit.textContent;
-        var unitAlt = tempUnitChange.textContent;
-
-        if (unit === "°C"){
-            temp = temp * 9 / 5 + 32;
-        } else{
-            temp = (temp - 32) * 5 / 9;
-        }
-        
-        tempVal.textContent = temp;
-        tempUnit.textContent = unitAlt;
-        tempUnitChange.textContent = unit;
-    });   
 }
 
+//Changing unit
+var tempVal = document.querySelector('#temp-val');
+var tempUnit = document.querySelector('#temp-unit');
+var tempUnitChange = document.querySelector('#temp-unit-change');
+
+tempUnitChange.addEventListener('click', function(){
+    console.log("Changing unit");
+    var temp = 1*tempVal.textContent;
+    var unit = tempUnit.textContent;
+    var unitAlt = tempUnitChange.textContent;
+
+    if (unit === "°C"){
+         temp = temp * 9 / 5 + 32;
+    } else{
+        temp = (temp - 32) * 5 / 9;
+    }
+        
+    tempVal.textContent = temp;
+    tempUnit.textContent = unitAlt;
+    tempUnitChange.textContent = unit;
+}); 
