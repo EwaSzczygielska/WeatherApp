@@ -19,3 +19,11 @@ main{
 hr{
     width: 20px;
 }
+
+main .current{
+    border: 3px solid red;
+}
+
+main .current div div {
+    border: 3px solid blue;
+}
