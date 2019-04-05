@@ -1,7 +1,7 @@
 //---Paste to destination .js ---  
-//conts{currentWeather} = require('./current.js');
+//import currentWeather from 'current'
 
-function currentWeather(data){
+export default function currentWeather(data){
     //var appID = "0e3713180683cf2f0424d6d8a2c2ebe2";
 
     var tempVal = $('#temp-val');
@@ -41,5 +41,3 @@ function currentWeather(data){
     });
 
 }
-
-module.exports = {currentWeather};
