@@ -1,5 +1,8 @@
 "use strict";
 
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
 var city;
 var curcity;
 var dayscity;
@@ -7,7 +10,7 @@ var mapcity;
 
 $(document).ready(function () {
 
-    city = "wroclaw";
+    exports.city = city = "wroclaw";
     $.ajax({
         url: "http://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=fc68321f36609fbd9dcd3f318740aa8a",
         type: "GET",
@@ -35,7 +38,7 @@ $(document).ready(function () {
                 type: "GET",
                 dataType: "jsonp",
                 success: function success(data) {
-                    city = city1;
+                    exports.city = city = city1;
                     curcity = data;
                     console.log(city);
                     console.log(curcity);
@@ -74,3 +77,5 @@ $(document).ready(function () {
         console.log(dayscity);
     });
 });
+
+exports.city = city;
