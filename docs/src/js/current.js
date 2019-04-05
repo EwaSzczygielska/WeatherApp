@@ -14,23 +14,27 @@ function currentWeather(city){
     fetch(url)
        .then(resp => resp.json())
         .then(data => {
-            tempVal.textContent = Math.round(data.main.temp);
-            sky.textContent = data.weather[0].description;
-            iconCode = data.weather[0].icon;
+            let temperature = data.main.temp;
+            let description = data.weather[0].description;
+            let pressure = data.main.pressure;
+            let humidity = data.main.humidity;
+            let windSpeed = data.wind.speed;
+            let feelsLike = 0.045 * (Math.pow(5.27, 0.5) + 10.45 - 0.28 * windSpeed) * (temperature - 33) + 33;
+
+            tempVal.textContent = Math.round(temperature);
+            sky.textContent = description;
             infoList.innerHTML =
             `
             <div class="row">
-                <li class="col-sm-3">Feels Like ${Math.round(data.main.temp)}°C</li>          
-                <li class="col-sm-3">Pressure ${data.main.pressure} hPa</li>
+                <li class="col-sm-3">Feels Like ${feelsLike}°C</li>          
+                <li class="col-sm-3">Pressure ${pressure} hPa</li>
             </div>
             <div class="row">
-                <li class="col-sm-3">Humidity ${data.main.humidity}%</li>
-                <li class="col-sm-3">Wind ${data.wind.speed} m/s</li>    
+                <li class="col-sm-3">Humidity ${humidity}%</li>
+                <li class="col-sm-3">Wind ${windSpeed} m/s</li>    
             </div> 
             `;
         });
-
-//<li class="col-sm">Wind direction ${data.wind.deg}°</li>
    
 //Changing unit
     tempUnitChange.click(fun  => {
