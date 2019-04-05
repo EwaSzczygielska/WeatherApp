@@ -1,6 +1,6 @@
 //http://api.openweathermap.org/data/2.5/forecast?q=London&APPID=ed35929be75cc2d35d7f745115549c49
 //import {city} from './searchbar.js';
-let city = 'wroclaw';
+var city = 'wroclaw';
 let appID = 'ed35929be75cc2d35d7f745115549c49';
 let units = 'metric'
 let day;
@@ -19,6 +19,7 @@ var tempMin;
 var hum;
 var i;
 var j;
+var k;
 var n = -5;
 var weatharray;
 var maxarray;
@@ -56,6 +57,12 @@ fetch(url)
             newDate1 = new Date(`${newDate.getFullYear()}-${newDate.getMonth()}-${newDate.getDate()}`);
             newDate1 = newDate1.getTime();
             n = n + 5;
+            for (k = 0; k < 8; k++) {
+                if (newDate1 != data.list[k].dt * 1000) {
+                    n++;
+                }
+            }
+            console.log(n);
             hum = 0;
             tempMax = -100;
             tempMin = 100;
