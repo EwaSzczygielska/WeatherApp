@@ -41,3 +41,13 @@ export default function currentWeather(data){
     });
 
 }
+
+city = "wroclaw";
+$.ajax({
+            url: "http://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=fc68321f36609fbd9dcd3f318740aa8a",
+            type: "GET",
+            dataType: "jsonp",
+            success: function (data) {
+                currentWeather(data);
+            }
+        });
