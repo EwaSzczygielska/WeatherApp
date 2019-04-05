@@ -65,8 +65,9 @@ var oneDay = 86400;
 var threeHours = 10800000;
 var newDate;
 var newDate1;
-var tempMax = -100;
-var tempMin = 100;
+var tempMax;
+var tempMin;
+var hum;
 var i;
 var j;
 var n = -5;
@@ -75,6 +76,7 @@ let dayofweek = document.querySelectorAll('.dayofweek');
 let date = document.querySelectorAll('.date');
 let maximumtemp = document.querySelectorAll('.max-temp');
 let minimumtemp = document.querySelectorAll('.min-temp');
+let humidity = document.querySelectorAll('.humidity');
 
 //const fetch = require('node-fetch');
 var url = (`https://api.openweathermap.org/data/2.5/forecast?q=${city}&units=metric&APPID=${appID}`);
@@ -95,6 +97,9 @@ fetch(url)
             newDate1 = new Date(`${newDate.getFullYear()}-${newDate.getMonth()}-${newDate.getDate()}`);
             newDate1 = newDate1.getTime();
             n = n + 5;
+            hum=0;
+            tempMax = -100;
+            tempMin = 100;
             for (j = n; j < (n + 8); j++) {
                 if (data.list[j].main.temp_max > tempMax) {
                     tempMax = data.list[j].main.temp_max;
@@ -102,10 +107,13 @@ fetch(url)
                 if (data.list[j].main.temp_min < tempMin) {
                     tempMin = data.list[j].main.temp_min;
                 };
+                hum = hum + data.list[j].main.humidity;
             }
             tempMax = Math.round(tempMax*10)/10;
             tempMin = Math.round(tempMin*10)/10;
-            maximumtemp[i].innerHTML = `${tempMax}&deg`;
-            minimumtemp[i].innerHTML = `${tempMin}&deg`;
+            hum=Math.round(hum/8);
+            maximumtemp[i].innerHTML = `${tempMax}&deg C`;
+            minimumtemp[i].innerHTML = `${tempMin}&deg C`;
+            humidity[i].innerHTML = `${hum}%`;
         }
     });
