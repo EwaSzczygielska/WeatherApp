@@ -6,13 +6,10 @@ function fiveDays(data) {
     let day;
     var weekDay = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
     var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-    var weather;
     var data;
-    var data1;
     var datax;
     var datay;
     var oneDay = 86400;
-    var threeHours = 10800000;
     var newDate;
     var newDate1;
     var tempMax;
@@ -24,11 +21,9 @@ function fiveDays(data) {
     var n = -5;
     var weatharray;
     var maxarray;
-    let weatherIcon;
     var skycons = new Skycons({
         "color": "black"
     });
-
 
     let dayofweek = document.querySelectorAll('.dayofweek');
     let date = document.querySelectorAll('.date');
@@ -37,22 +32,11 @@ function fiveDays(data) {
     let humidity = document.querySelectorAll('.humidity');
     let iconx = document.querySelectorAll('.icon');
 
-
-    let thunder = document.querySelector('.thunder-cloud');
-    let rain = document.querySelector('.rain-cloud');
-    let snow = document.querySelector('.snow-cloud');
-    let halfsun = document.querySelector('.sun-cloud');
-    let sun = document.querySelector('.sunshine');
-    let cloud = document.querySelector('.windy-cloud');
-
-
-
     //const fetch = require('node-fetch');
     var url = (`https://api.openweathermap.org/data/2.5/forecast?q=${city}&units=${units}&APPID=${appID}`);
     fetch(url)
         .then(resp => resp.json())
         .then(data1 => {
-            console.log(data1);
             day = data1.list[0].dt;
             for (i = 0; i < 5; i++) {
                 day = day + oneDay;
@@ -61,22 +45,14 @@ function fiveDays(data) {
                 datax = newDate.getDate();
                 datay = months[newDate.getMonth()];
                 date[i].innerHTML = `${datax} ${datay}`;
-                console.log(weekDay[newDate.getDay()], newDate.getDate(), months[newDate.getMonth()])
+                console.log(weekDay[newDate.getDay()], newDate.getDate(), months[newDate.getMonth()]);
                 newDate1 = new Date(`${newDate.getFullYear()}-${newDate.getMonth()}-${newDate.getDate()}`);
                 newDate1 = newDate1.getTime();
                 n = n + 5;
-                console.log(newDate1);
-                console.log(data1.list[n].dt * 1000);
-
-                console.log(n);
                 hum = 0;
                 tempMax = -100;
                 tempMin = 100;
                 weatharray = [0, 0, 0, 0, 0, 0, 0];
-                weatherIcon = [0, 0, 0, 0, 0];
-
-
-
                 for (j = n; j < (n + 8); j++) {
                     if (data1.list[j].main.temp_max > tempMax) {
                         tempMax = data1.list[j].main.temp_max;
@@ -102,7 +78,6 @@ function fiveDays(data) {
                         weatharray[6]++;
                     }
                 };
-                console.log(weatharray);
                 maxarray = Math.max.apply(null, weatharray);
                 switch (maxarray) {
                     case weatharray[0]:
@@ -134,14 +109,13 @@ function fiveDays(data) {
                         console.log(k);
                         break;
                 }
-
                 tempMax = Math.round(tempMax * 10) / 10;
                 tempMin = Math.round(tempMin * 10) / 10;
                 hum = Math.round(hum / 8);
                 maximumtemp[i].innerHTML = `${tempMax}&deg C`;
                 minimumtemp[i].innerHTML = `${tempMin}&deg C`;
                 humidity[i].innerHTML = `${hum}%`;
-            
+
                 function iconplay(k) {
                     skycons.add(iconx[i], Skycons[k]);
                     skycons.play();
@@ -151,5 +125,3 @@ function fiveDays(data) {
 
         });
 }
-
-fiveDays();
