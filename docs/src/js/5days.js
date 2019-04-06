@@ -20,17 +20,23 @@ function fiveDays(data) {
     var hum;
     var i;
     var j;
-    //var k;
+    var k;
     var n = -5;
     var weatharray;
     var maxarray;
+    let weatherIcon;
+    var skycons = new Skycons({
+        "color": "black"
+    });
+
 
     let dayofweek = document.querySelectorAll('.dayofweek');
     let date = document.querySelectorAll('.date');
     let maximumtemp = document.querySelectorAll('.max-temp');
     let minimumtemp = document.querySelectorAll('.min-temp');
     let humidity = document.querySelectorAll('.humidity');
-    let weatherIcon = document.querySelector('.weather-icon');
+    let iconx = document.querySelectorAll('.icon');
+
 
     let thunder = document.querySelector('.thunder-cloud');
     let rain = document.querySelector('.rain-cloud');
@@ -39,37 +45,38 @@ function fiveDays(data) {
     let sun = document.querySelector('.sunshine');
     let cloud = document.querySelector('.windy-cloud');
 
+
+
     //const fetch = require('node-fetch');
     var url = (`https://api.openweathermap.org/data/2.5/forecast?q=${city}&units=${units}&APPID=${appID}`);
     fetch(url)
         .then(resp => resp.json())
         .then(data1 => {
-                console.log(data1);
-                day = data1.list[0].dt;
-                for (i = 0; i < 5; i++) {
-                    day = day + oneDay;
-                    newDate = new Date(day * 1000);
-                    dayofweek[i].innerHTML = weekDay[newDate.getDay()];
-                    datax = newDate.getDate();
-                    datay = months[newDate.getMonth()];
-                    date[i].innerHTML = `${datax} ${datay}`;
-                    console.log(weekDay[newDate.getDay()], newDate.getDate(), months[newDate.getMonth()])
-                    newDate1 = new Date(`${newDate.getFullYear()}-${newDate.getMonth()}-${newDate.getDate()}`);
-                    newDate1 = newDate1.getTime();
-                    n = n + 5;
-                    /*k = 0;
-                    while (newDate1 != data1.list[k].dt * 1000) {
-                        n++;
-                        k++;
-                    }*/
-                    console.log(newDate1);
-                    console.log(data1.list[n].dt * 1000);
+            console.log(data1);
+            day = data1.list[0].dt;
+            for (i = 0; i < 5; i++) {
+                day = day + oneDay;
+                newDate = new Date(day * 1000);
+                dayofweek[i].innerHTML = weekDay[newDate.getDay()];
+                datax = newDate.getDate();
+                datay = months[newDate.getMonth()];
+                date[i].innerHTML = `${datax} ${datay}`;
+                console.log(weekDay[newDate.getDay()], newDate.getDate(), months[newDate.getMonth()])
+                newDate1 = new Date(`${newDate.getFullYear()}-${newDate.getMonth()}-${newDate.getDate()}`);
+                newDate1 = newDate1.getTime();
+                n = n + 5;
+                console.log(newDate1);
+                console.log(data1.list[n].dt * 1000);
 
                 console.log(n);
                 hum = 0;
                 tempMax = -100;
                 tempMin = 100;
-                weatharray = [0, 0, 0, 0, 0, 0];
+                weatharray = [0, 0, 0, 0, 0, 0, 0];
+                weatherIcon = [0, 0, 0, 0, 0];
+
+
+
                 for (j = n; j < (n + 8); j++) {
                     if (data1.list[j].main.temp_max > tempMax) {
                         tempMax = data1.list[j].main.temp_max;
@@ -89,36 +96,42 @@ function fiveDays(data) {
                         weatharray[3]++;
                     } else if (data1.list[j].weather[0].id == 800) {
                         weatharray[4]++;
-                    } else {
+                    } else if (data1.list[j].weather[0].id == 801) {
                         weatharray[5]++;
+                    } else {
+                        weatharray[6]++;
                     }
                 };
                 console.log(weatharray);
                 maxarray = Math.max.apply(null, weatharray);
                 switch (maxarray) {
                     case weatharray[0]:
-                        weatherIcon[i] = "thunder1";
-                        console.log(weatherIcon[i]);
+                        k = "THUNDER";
+                        console.log(k);
                         break;
                     case weatharray[1]:
-                        weatherIcon[i] = "thunder2";
-                        console.log(weatherIcon[i]);
+                        k = "RAIN";
+                        console.log(k);
                         break;
                     case weatharray[2]:
-                        weatherIcon[i] = "thunder3";
-                        console.log(weatherIcon[i]);
+                        k = "SNOW";
+                        console.log(k);
                         break;
                     case weatharray[3]:
-                        weatherIcon[i] = "thunder4";
-                        console.log(weatherIcon[i]);
+                        k = "FOG";
+                        console.log(k);
                         break;
                     case weatharray[4]:
-                        weatherIcon[i] = "thunder5";
-                        console.log(weatherIcon[i]);
+                        k = "CLEAR_DAY";
+                        console.log(k);
                         break;
                     case weatharray[5]:
-                        weatherIcon[i] = "thunder6";
-                        console.log(weatherIcon[i]);
+                        k = "PARTLY_CLOUDY_DAY";
+                        console.log(k);
+                        break;
+                    case weatharray[6]:
+                        k = "CLOUDY";
+                        console.log(k);
                         break;
                 }
 
@@ -127,7 +140,16 @@ function fiveDays(data) {
                 hum = Math.round(hum / 8);
                 maximumtemp[i].innerHTML = `${tempMax}&deg C`;
                 minimumtemp[i].innerHTML = `${tempMin}&deg C`;
-                humidity[i].innerHTML = `${hum}%`;}
-        });}
+                humidity[i].innerHTML = `${hum}%`;
+            
+                function iconplay(k) {
+                    skycons.add(iconx[i], Skycons[k]);
+                    skycons.play();
+                }
+                iconplay(k);
+            }
+
+        });
+}
 
 fiveDays();
