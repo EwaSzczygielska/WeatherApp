@@ -11,7 +11,50 @@ body{
 main{
     height: 50vh;
 }
-
+/*5day styling*/
 .day{
     border: 3px solid red;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: space-around;
+    line-height: 1em;
 }
+.dayofweek{
+    text-transform: uppercase;
+}
+.descr{
+    text-align: center;
+}
+/*end od 5day styling*/
+
+#temp-val{
+    font-size: 90px;
+}
+
+#temp-unit{
+    font-size: 40px;
+}
+
+#sky{
+    font-size: 30px;
+}
+
+
+hr{
+    width: 20px;
+}
+
+
+main .current div{
+    border: 3px solid red;
+}
+
+main .current div div {
+    border: 3px solid blue;
+}
+
+main .current .info-box #info-list{
+    list-style: none;
+}
+

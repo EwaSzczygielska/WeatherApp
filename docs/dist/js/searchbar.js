@@ -4,20 +4,24 @@ var city;
 var curcity;
 var dayscity;
 var mapcity;
+var units = 'metric';
 
 $(document).ready(function () {
 
     city = "wroclaw";
     $.ajax({
-        url: "http://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=fc68321f36609fbd9dcd3f318740aa8a",
+        url: "http://api.openweathermap.org/data/2.5/weather?q=" + city + "&units=" + units + "&appid=fc68321f36609fbd9dcd3f318740aa8a",
         type: "GET",
         dataType: "jsonp",
         success: function success(data) {
-            curcity = data;
+            currentWeather(data);
+            fiveDays(data);
+            $("#error").html('');
+            $("#nameofcity").html('Wrocław');
         }
     });
     $.ajax({
-        url: "http://api.openweathermap.org/data/2.5/forecast?q=" + city + "&appid=fc68321f36609fbd9dcd3f318740aa8a",
+        url: "http://api.openweathermap.org/data/2.5/forecast?q=" + city + "&units=" + units + "&appid=fc68321f36609fbd9dcd3f318740aa8a",
         type: "GET",
         dataType: "jsonp",
         success: function success(data) {
@@ -31,15 +35,17 @@ $(document).ready(function () {
 
         if (city1 != '') {
             $.ajax({
-                url: "http://api.openweathermap.org/data/2.5/weather?q=" + city1 + "&appid=fc68321f36609fbd9dcd3f318740aa8a",
+                url: "http://api.openweathermap.org/data/2.5/weather?q=" + city1 + "&units=" + units + "&appid=fc68321f36609fbd9dcd3f318740aa8a",
                 type: "GET",
                 dataType: "jsonp",
                 success: function success(data) {
                     city = city1;
-                    curcity = data;
                     console.log(city);
                     console.log(curcity);
+                    currentWeather(data);
+                    fiveDays(data);
                     $("#error").html('');
+                    $("#nameofcity").html(city);
                 },
                 error: function error(data) {
                     $("#error").html('Wrong name of city');
@@ -49,7 +55,7 @@ $(document).ready(function () {
             });
 
             $.ajax({
-                url: "http://api.openweathermap.org/data/2.5/forecast?q=" + city1 + "&appid=fc68321f36609fbd9dcd3f318740aa8a",
+                url: "http://api.openweathermap.org/data/2.5/forecast?q=" + city1 + "&units=" + units + "&appid=fc68321f36609fbd9dcd3f318740aa8a",
                 type: "GET",
                 dataType: "jsonp",
                 success: function success(data) {
@@ -74,5 +80,3 @@ $(document).ready(function () {
         console.log(dayscity);
     });
 });
-
-//export {city};
