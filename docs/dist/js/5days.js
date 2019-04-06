@@ -60,11 +60,14 @@ function fiveDays(data) {
             newDate1 = new Date(newDate.getFullYear() + '-' + newDate.getMonth() + '-' + newDate.getDate());
             newDate1 = newDate1.getTime();
             n = n + 5;
-            /*for (k = 0; k < 8; k++) {
-                if (newDate1 != data.list[k].dt * 1000) {
-                    n++;
-                }
+            k = 0;
+            /*while (newDate1 != data1.list[k].dt * 1000) {
+                n++;
+                k++;
             }*/
+            console.log(newDate1);
+            console.log(data1.list[n].dt * 1000);
+
             console.log(n);
             hum = 0;
             tempMax = -100;
@@ -92,7 +95,7 @@ function fiveDays(data) {
                 } else {
                     weatharray[5]++;
                 }
-            }
+            };
             console.log(weatharray);
             maxarray = Math.max.apply(null, weatharray);
             switch (maxarray) {

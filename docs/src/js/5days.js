@@ -44,25 +44,27 @@ function fiveDays(data) {
     fetch(url)
         .then(resp => resp.json())
         .then(data1 => {
-            console.log(data1);
-            day = data1.list[0].dt;
-            for (i = 0; i < 5; i++) {
-                day = day + oneDay;
-                console.log(day);
-                newDate = new Date(day * 1000);
-                dayofweek[i].innerHTML = weekDay[newDate.getDay()];
-                datax = newDate.getDate();
-                datay = months[newDate.getMonth()];
-                date[i].innerHTML = `${datax} ${datay}`;
-                console.log(weekDay[newDate.getDay()], newDate.getDate(), months[newDate.getMonth()])
-                newDate1 = new Date(`${newDate.getFullYear()}-${newDate.getMonth()}-${newDate.getDate()}`);
-                newDate1 = newDate1.getTime();
-                n = n + 5;
-                /*for (k = 0; k < 8; k++) {
-                    if (newDate1 != data.list[k].dt * 1000) {
+                console.log(data1);
+                day = data1.list[0].dt;
+                for (i = 0; i < 5; i++) {
+                    day = day + oneDay;
+                    newDate = new Date(day * 1000);
+                    dayofweek[i].innerHTML = weekDay[newDate.getDay()];
+                    datax = newDate.getDate();
+                    datay = months[newDate.getMonth()];
+                    date[i].innerHTML = `${datax} ${datay}`;
+                    console.log(weekDay[newDate.getDay()], newDate.getDate(), months[newDate.getMonth()])
+                    newDate1 = new Date(`${newDate.getFullYear()}-${newDate.getMonth()}-${newDate.getDate()}`);
+                    newDate1 = newDate1.getTime();
+                    n = n + 5;
+                    /*k = 0;
+                    while (newDate1 != data1.list[k].dt * 1000) {
                         n++;
-                    }
-                }*/
+                        k++;
+                    }*/
+                    console.log(newDate1);
+                    console.log(data1.list[n].dt * 1000);
+
                 console.log(n);
                 hum = 0;
                 tempMax = -100;
@@ -90,7 +92,7 @@ function fiveDays(data) {
                     } else {
                         weatharray[5]++;
                     }
-                }
+                };
                 console.log(weatharray);
                 maxarray = Math.max.apply(null, weatharray);
                 switch (maxarray) {
@@ -125,9 +127,7 @@ function fiveDays(data) {
                 hum = Math.round(hum / 8);
                 maximumtemp[i].innerHTML = `${tempMax}&deg C`;
                 minimumtemp[i].innerHTML = `${tempMin}&deg C`;
-                humidity[i].innerHTML = `${hum}%`;
-            }
-        });
-}
+                humidity[i].innerHTML = `${hum}%`;}
+        });}
 
 fiveDays();
