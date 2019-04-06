@@ -119,15 +119,21 @@
         <div class="diagrams">
             <div class="temperature-diag">
                 <div class="descr"></div>
-                <div class="diag"></div>
+                <div class="diag">
+                    <canvas id="temperatureChart"></canvas>
+                </div>
             </div>
             <div class="pressure-diag">
                 <div class="descr"></div>
-                <div class="diag"></div>
+                <div class="diag">
+                    <canvas id="pressureChart"></canvas>
+                </div>
             </div>
             <div class="humidity-diag">
                 <div class="descr"></div>
-                <div class="diag"></div>
+                <div class="diag">
+                    <canvas id="humidityChart"></canvas>
+                </div>
             </div>
         </div>
         <div class="map">
@@ -135,12 +141,14 @@
         </div>
     </main>
     <footer></footer>
-
+ 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
     </script>
     <script src="./dist/js/5days.js" type="text/javascript"></script>
+    <script src="./src/js/diagrams.js" type="text/javascript"></script>
     <script src="./dist/bundle.js" type="text/javascript"></script>
     <script src="./src/js/current.js" type="text/javascript"></script>
     <script src="./src/js/searchbar.js" type="text/javascript"></script>

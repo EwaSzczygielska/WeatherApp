@@ -8,3 +8,4 @@ import './src/js/searchbar.js';
 import './src/js/current.js';
 import './src/js/diagrams.js';
 import './src/js/maps.js';
+
