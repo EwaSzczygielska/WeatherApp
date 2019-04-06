@@ -50,7 +50,6 @@ function fiveDays(data) {
         day = data1.list[0].dt;
         for (i = 0; i < 5; i++) {
             day = day + oneDay;
-            console.log(day);
             newDate = new Date(day * 1000);
             dayofweek[i].innerHTML = weekDay[newDate.getDay()];
             datax = newDate.getDate();
@@ -60,8 +59,8 @@ function fiveDays(data) {
             newDate1 = new Date(newDate.getFullYear() + '-' + newDate.getMonth() + '-' + newDate.getDate());
             newDate1 = newDate1.getTime();
             n = n + 5;
-            k = 0;
-            /*while (newDate1 != data1.list[k].dt * 1000) {
+            /*k = 0;
+            while (newDate1 != data1.list[k].dt * 1000) {
                 n++;
                 k++;
             }*/
