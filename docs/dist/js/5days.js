@@ -22,7 +22,7 @@ function fiveDays(data) {
     var hum;
     var i;
     var j;
-    var k;
+    //var k;
     var n = -5;
     var weatharray;
     var maxarray;
