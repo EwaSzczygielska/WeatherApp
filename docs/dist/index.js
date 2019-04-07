@@ -1,16 +1,16 @@
 'use strict';
 
-require('./src/js/skycons.js');
+require('./js/5days.js');
 
-require('./src/js/5days.js');
+require('./js/searchbar.js');
 
-require('./src/js/searchbar.js');
+require('./js/current.js');
 
-require('./src/js/current.js');
+require('./js/diagrams.js');
 
-require('./src/js/diagrams.js');
+require('./js/maps.js');
 
-require('./src/js/maps.js');
+require('./js/skycons.js');
 
 console.log('test01');
 // Ewa API key - ed35929be75cc2d35d7f745115549c49;
