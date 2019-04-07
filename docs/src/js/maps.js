@@ -19,21 +19,28 @@
     var long = Math.floor(((x + 180)/45));
 
     var lat;
-if (y < -66)
-    lat = 6;
-    else if (y < -40)
-        lat = 5;
-        else if (y < 0)
-                lat = 4;
-                else if (y<40)
-                    lat=3;
-                    else if (y<66)
-                        lat=2;
-                        else if(y<80)
-                            lat=1;
-                            else
-                                lat=0;
+    if (y < -66)
+        lat = 6;
+        else if (y < -40)
+            lat = 5;
+            else if (y < 0)
+                    lat = 4;
+                    else if (y<40)
+                        lat=3;
+                        else if (y<66)
+                            lat=2;
+                            else if(y<80)
+                                lat=1;
+                                else
+                                    lat=0;
 
     adres = "https://a.sat.owm.io/sql/3/"+long+"/"+lat+"/?appid=9de243494c0b295cca9337e1e96b00e2&overzoom=true&op=rgb&from=modis&select=b1,b4,b3&tabActive=2&order=last";
     $("#my_image").attr("src", adres);
+}
+
+function nosignal()
+{
+    $("#my_image").attr("src", "problems.jpg");
+    $("#my_image").attr("widght", 256);
+    $("#my_image").attr("height", 256);
 }
