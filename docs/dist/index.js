@@ -2,8 +2,6 @@
 
 require('./js/5days.js');
 
-require('./js/searchbar.js');
-
 require('./js/current.js');
 
 require('./js/diagrams.js');
@@ -11,6 +9,8 @@ require('./js/diagrams.js');
 require('./js/maps.js');
 
 require('./js/skycons.js');
+
+require('./js/searchbar.js');
 
 console.log('test01');
 // Ewa API key - ed35929be75cc2d35d7f745115549c49;
