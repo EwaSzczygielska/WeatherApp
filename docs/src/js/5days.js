@@ -1,6 +1,5 @@
 function fiveDays(data) {
     let city = data.name;
-    console.log(city);
     let appID = 'ed35929be75cc2d35d7f745115549c49';
     let units = 'metric'
     let day;
@@ -45,7 +44,6 @@ function fiveDays(data) {
                 datax = newDate.getDate();
                 datay = months[newDate.getMonth()];
                 date[i].innerHTML = `${datax} ${datay}`;
-                console.log(weekDay[newDate.getDay()], newDate.getDate(), months[newDate.getMonth()]);
                 newDate1 = new Date(`${newDate.getFullYear()}-${newDate.getMonth()}-${newDate.getDate()}`);
                 newDate1 = newDate1.getTime();
                 n = n + 5;
@@ -61,7 +59,6 @@ function fiveDays(data) {
                         tempMin = data1.list[j].main.temp_min;
                     };
                     hum = hum + data1.list[j].main.humidity;
-                    console.log(data1.list[j].weather[0].id);
                     if (data1.list[j].weather[0].id > 199 && data1.list[j].weather[0].id < 233) {
                         weatharray[0]++;
                     } else if (data1.list[j].weather[0].id > 299 && data1.list[j].weather[0].id < 532) {
@@ -82,31 +79,24 @@ function fiveDays(data) {
                 switch (maxarray) {
                     case weatharray[0]:
                         k = "THUNDER";
-                        console.log(k);
                         break;
                     case weatharray[1]:
                         k = "RAIN";
-                        console.log(k);
                         break;
                     case weatharray[2]:
                         k = "SNOW";
-                        console.log(k);
                         break;
                     case weatharray[3]:
                         k = "FOG";
-                        console.log(k);
                         break;
                     case weatharray[4]:
                         k = "CLEAR_DAY";
-                        console.log(k);
                         break;
                     case weatharray[5]:
                         k = "PARTLY_CLOUDY_DAY";
-                        console.log(k);
                         break;
                     case weatharray[6]:
                         k = "CLOUDY";
-                        console.log(k);
                         break;
                 }
                 tempMax = Math.round(tempMax * 10) / 10;
