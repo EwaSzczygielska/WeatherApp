@@ -9,3 +9,4 @@ import './js/diagrams.js';
 import './js/maps.js';
 import './js/skycons.js';
 import './js/searchbar.js';
+require("expose-loader?$!jquery");
