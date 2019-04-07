@@ -17,14 +17,20 @@ main{
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: center;
+    align-items: center;
     line-height: 1em;
 }
 .dayofweek{
     text-transform: uppercase;
+    font-weight: 700;
 }
 .descr{
     text-align: center;
+}
+.icon{
+    width: 100%;
+    height: auto;
 }
 /*end od 5day styling*/
 

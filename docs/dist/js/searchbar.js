@@ -16,6 +16,7 @@ $(document).ready(function () {
         success: function success(data) {
             currentWeather(data);
             fiveDays(data);
+            currentMap(data.coord.lon, data.coord.lat);
             $("#error").html('');
             $("#nameofcity").html('Wrocław');
         }
@@ -44,6 +45,7 @@ $(document).ready(function () {
                     console.log(curcity);
                     currentWeather(data);
                     fiveDays(data);
+                    currentMap(data.coord.lon, data.coord.lat);
                     $("#error").html('');
                     $("#nameofcity").html(city);
                 },
@@ -72,11 +74,5 @@ $(document).ready(function () {
             console.log(curcity);
             console.log(dayscity);
         }
-    });
-
-    $('#sprawdzenie').click(function () {
-        console.log(city);
-        console.log(curcity);
-        console.log(dayscity);
     });
 });

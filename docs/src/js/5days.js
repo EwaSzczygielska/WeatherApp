@@ -112,8 +112,8 @@ function fiveDays(data) {
                 tempMax = Math.round(tempMax * 10) / 10;
                 tempMin = Math.round(tempMin * 10) / 10;
                 hum = Math.round(hum / 8);
-                maximumtemp[i].innerHTML = `${tempMax}&deg C`;
-                minimumtemp[i].innerHTML = `${tempMin}&deg C`;
+                maximumtemp[i].innerHTML = `${tempMax} &degC`;
+                minimumtemp[i].innerHTML = `${tempMin} &degC`;
                 humidity[i].innerHTML = `${hum}%`;
 
                 function iconplay(k) {
