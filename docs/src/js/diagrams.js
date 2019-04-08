@@ -49,7 +49,7 @@ function diagrams(data){
         options:{}
     });
 
-    setTimeout(function() { lineTemperatureChart.update(); },500);
+    setTimeout(function() { lineTemperatureChart.update(); },1000);
 
    let linePressureChart = new Chart(pressureChart, {
         type: 'line',
