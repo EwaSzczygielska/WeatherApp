@@ -39,6 +39,10 @@ main .photo {
     font-size: 1.2em;
 }
 
+.date {
+    color: rgba(255, 255, 255, 0.6);
+}
+
 .descr {
     text-align: center;
 }
@@ -60,7 +64,7 @@ main .photo {
 
 .min-temp {
     font-size: 2em;
-    color: rgba(255, 255, 255, 0.7);
+    color: rgba(255, 255, 255, 0.6);
 }
 
 .min-temp:before {
