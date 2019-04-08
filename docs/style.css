@@ -37,11 +37,11 @@ main .photo {
 }
 
 .max-temp:before{
-    content: "Max temp.";
+    content: "Max temp. ";
 }
 
 .min-temp:before {
-    content: "Min temp.";
+    content: "Min temp. ";
 }
 /*end od 5day styling*/
 
