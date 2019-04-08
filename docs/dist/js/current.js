@@ -15,9 +15,16 @@ function currentWeather(data) {
     var weatherID = data.weather[0].id;
 
     var feelsLike = Math.round(13.12 + 0.6215 * temperature - 11.37 * Math.pow(windSpeed, 0.16) + 0.3965 * temperature * Math.pow(windSpeed, 0.16));
+
+    var descrArray = description.split(" ");
+    for (var i = 0; i < descrArray.length; i++) {
+        descrArray[i] = descrArray[i][0].toUpperCase() + descrArray[i].slice(1, descrArray[i].length);
+    }
+    description = descrArray.join(" ");
+
     tempVal.textContent = Math.round(temperature);
     sky.textContent = description;
-    infoList.innerHTML = '\n    <div class="row">\n        <li class="col-sm-3">Feels Like  <span id="feel-temp-value">' + feelsLike + '</span><span id="feel-temp-unit">\xB0C</span></li>          \n        <li class="col-sm-3">Pressure  ' + pressure + ' hPa</li>\n    </div>\n    <div class="row">\n        <li class="col-sm-3">Humidity  ' + humidity + '%</li>\n        <li class="col-sm-3">Wind  <span id="wind-value">' + windSpeed + '</span> <span id="wind-unit">km/h</span></li>    \n    </div> \n    ';
+    infoList.innerHTML = '\n    <div class="row">\n        <li class="col-sm-6 col-md-3 col-xl-2 "><span style="color:var(--sec-font-color);">Feels Like</span> &nbsp<span id="feel-temp-value">' + feelsLike + '</span><span id="feel-temp-unit">\xB0C</span></li>          \n        <li class="col-sm-6 col-md-4 col-xl-3"><span style="color:var(--sec-font-color);">Pressure</span> &nbsp' + pressure + '&nbsphPa</li>\n    </div>\n    <div class="row">\n        <li class="col-sm-6 col-md-3 col-xl-2"><span style="color:var(--sec-font-color);">Humidity</span> &nbsp' + humidity + '%</li>\n        <li class="col-sm-6 col-md-4 col-xl-3"><span style="color:var(--sec-font-color);">Wind</span> &nbsp<span id="wind-value">' + windSpeed + '</span>&nbsp<span id="wind-unit">km/h</span></li>    \n    </div> \n    ';
 
     windSpeedValue = document.querySelector('#wind-value');
     windSpeedUnit = document.querySelector('#wind-unit');
