@@ -1,5 +1,12 @@
+:root{
+    --main-font-color: white;
+    --sec-font-color: #d9d9d9;
+}
+
 * {
     font-family: 'Dosis',sans-serif;
+    padding: 0;
+    margin: 0;
 }
 
 body{
@@ -8,53 +15,93 @@ body{
     height: 100vh;
 }
 
-main{
-    height: 50vh;
+/*current styling*/
+main .photo {
+    color: var(--main-font-color);
+    background-size: auto 100%;
+    background-position: center center;
+    padding: 20px;
 }
-/*5day styling*/
-.day{
-    border: 3px solid red;
+
+.temp{
     display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    justify-content: space-around;
-    line-height: 1em;
+    justify-content: center;
+    flex:1;
+    flex-wrap: nowrap;
+    min-width: 160px;
 }
-.dayofweek{
-    text-transform: uppercase;
-}
-.descr{
-    text-align: center;
-}
-/*end od 5day styling*/
 
 #temp-val{
-    font-size: 90px;
+    font-size: 150px;
+    font-weight: 100;
+    text-align: right;
+    line-height: 0.8;
 }
 
 #temp-unit{
-    font-size: 40px;
+    text-align: center;
+    position: relative;
+    right: 5px;
+    margin: 0;
+    font-size: 50px;
+    line-height: 1.1;
+}
+
+#temp-unit-change {
+    color: var(--sec-font-color);
+    margin-top: 4px;
+    text-align: center;
 }
 
 #sky{
     font-size: 30px;
 }
 
-
-hr{
-    width: 20px;
+main hr{
+    border: none;
+    background-color: var(--sec-font-color);
+    height: 1px;
+    width: 35px;
+    margin: 0 auto;
+    text-align: center;
 }
 
-
-main .current div{
-    border: 3px solid red;
-}
-
-main .current div div {
-    border: 3px solid blue;
-}
-
-main .current .info-box #info-list{
+.info-box #info-list{
     list-style: none;
+    padding: 0;
 }
+/*end od current styling*/
+
+
+/*5day styling*/
+.day{
+    border: 3px solid red;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    line-height: 1em;
+}
+.dayofweek{
+    text-transform: uppercase;
+    font-weight: 700;
+}
+.descr{
+    text-align: center;
+}
+.icon{
+    width: 100%;
+    height: auto;
+}
+
+.max-temp:before{
+    content: "Max temp. ";
+}
+
+.min-temp:before {
+    content: "Min temp. ";
+}
+/*end od 5day styling*/
+
 
