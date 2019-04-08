@@ -18,12 +18,12 @@ function currentWeather(data){
     infoList.innerHTML =
     `
     <div class="row">
-        <li class="col-sm-3">Feels Like  <span id="feel-temp-value">${feelsLike}</span><span id="feel-temp-unit">°C</span></li>          
-        <li class="col-sm-3">Pressure  ${pressure} hPa</li>
+        <li class="col-sm-2"><span style="color:var(--sec-font-color);">Feels Like</span> &nbsp<span id="feel-temp-value">${feelsLike}</span><span id="feel-temp-unit">°C</span></li>          
+        <li class="col-sm-3"><span style="color:var(--sec-font-color);">Pressure</span> &nbsp${pressure}&nbsphPa</li>
     </div>
     <div class="row">
-        <li class="col-sm-3">Humidity  ${humidity}%</li>
-        <li class="col-sm-3">Wind  <span id="wind-value">${windSpeed}</span> <span id="wind-unit">km/h</span></li>    
+        <li class="col-sm-2"><span style="color:var(--sec-font-color);">Humidity</span> &nbsp${humidity}%</li>
+        <li class="col-sm-3"><span style="color:var(--sec-font-color);">Wind</span> &nbsp<span id="wind-value">${windSpeed}</span>&nbsp<span id="wind-unit">km/h</span></li>    
     </div> 
     `;
 
