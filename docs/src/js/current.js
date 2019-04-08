@@ -1,5 +1,4 @@
 function currentWeather(data){
-    
     var tempVal = document.querySelector('#temp-val');
     var sky = document.querySelector('#sky');
     var infoList = document.querySelector('#info-list');
