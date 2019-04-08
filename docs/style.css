@@ -8,9 +8,6 @@ body{
     height: 100vh;
 }
 
-main{
-    height: 50vh;
-}
 /*5day styling*/
 .day{
     border: 3px solid red;
@@ -46,11 +43,9 @@ main{
     font-size: 30px;
 }
 
-
 hr{
     width: 20px;
 }
-
 
 main .current div{
     border: 3px solid red;
