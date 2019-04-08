@@ -83,6 +83,14 @@ main hr{
     width: 100%;
     height: auto;
 }
+
+.max-temp:before{
+    content: "Max temp. ";
+}
+
+.min-temp:before {
+    content: "Min temp. ";
+}
 /*end od 5day styling*/
 
 

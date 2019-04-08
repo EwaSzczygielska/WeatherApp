@@ -23,7 +23,7 @@ function fiveDays(data) {
     var weatharray;
     var maxarray;
     var skycons = new Skycons({
-        "color": "black"
+        "color": "white"
     });
 
     var dayofweek = document.querySelectorAll('.dayofweek');
