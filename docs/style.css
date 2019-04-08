@@ -48,7 +48,8 @@ main .photo {
     font-size: 30px;
 }
 
-hr{
+main hr{
+    border-color: white;
     width: 20px;
 }
 
