@@ -14,6 +14,7 @@ $(document).ready(function () {
                 success:function(data){
                     currentWeather(data);
                     fiveDays(data);
+                    diagrams(data);
                     $("#error").html('');
                     $("#nameofcity").html('Wrocław');
                 }
@@ -41,6 +42,7 @@ $(document).ready(function () {
                     city=city1;
                     console.log(city);
                     console.log(curcity);
+                    diagrams(data);
                     currentWeather(data);
                     fiveDays(data);
                     $("#error").html('');
