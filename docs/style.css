@@ -1,9 +1,9 @@
 * {
-    font-family: 'Dosis',sans-serif;
+    font-family: 'Dosis', sans-serif;
     color: white;
 }
 
-body{
+body {
     background-color: blue;
     width: 100vw;
     height: 100vh;
@@ -15,9 +15,16 @@ main .photo {
     background-position: center center;
 }
 
+#city {
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+#nameofcity {
+    text-transform: uppercase;
+}
+
 /*5day styling*/
-.day{
-    border: 3px solid red;
+.day {
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
@@ -25,45 +32,76 @@ main .photo {
     align-items: center;
     line-height: 1em;
 }
-.dayofweek{
+
+.dayofweek {
     text-transform: uppercase;
-    font-weight: 700;
-}
-.descr{
-    text-align: center;
-}
-.icon{
-    width: 100%;
-    height: auto;
+    font-weight: 600;
+    font-size: 1.2em;
 }
 
-.max-temp:before{
+.descr {
+    text-align: center;
+}
+
+.icon {
+    width: 90%;
+    height: auto;
+    padding: 5%;
+}
+
+.max-temp:before {
     content: "Max temp. ";
+    font-size: 0.5em;
+}
+
+.max-temp {
+    font-size: 2em;
+}
+
+.min-temp {
+    font-size: 2em;
+    color: rgba(255, 255, 255, 0.7);
 }
 
 .min-temp:before {
     content: "Min temp. ";
+    font-size: 0.5em;
 }
+
+.hum {
+    color: rgba(255, 255, 255, 0.7);
+    padding: 10%;
+}
+
+.descr {
+    padding: 2%;
+}
+
+.fivedays {
+    padding-top: 2%;
+    padding-bottom: 2%;
+}
+
 /*end od 5day styling*/
 
-#temp-val{
+#temp-val {
     font-size: 90px;
 }
 
-#temp-unit{
+#temp-unit {
     font-size: 40px;
 }
 
-#sky{
+#sky {
     font-size: 30px;
 }
 
-main hr{
+main hr {
     border-color: white;
     width: 20px;
 }
 
-main .current div{
+main .current div {
     border: 3px solid red;
 }
 
@@ -71,7 +109,6 @@ main .current div div {
     border: 3px solid blue;
 }
 
-main .current .info-box #info-list{
+main .current .info-box #info-list {
     list-style: none;
 }
-
