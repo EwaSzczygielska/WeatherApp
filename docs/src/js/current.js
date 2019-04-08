@@ -3,7 +3,7 @@ function currentWeather(data){
     var tempVal = document.querySelector('#temp-val');
     var sky = document.querySelector('#sky');
     var infoList = document.querySelector('#info-list');
-    var main = document.querySelector('main');
+    var photo = document.querySelector('.photo');
 
     let temperature = data.main.temp;
     let description = data.weather[0].description;
@@ -36,28 +36,28 @@ function currentWeather(data){
     //setting background image
     if (weatherID >= 200 && weatherID < 300){
         //thunder
-        main.style.backgroundImage = "url(./src/img/thunder.jpg)";
+        photo.style.backgroundImage = "url(./src/img/thunder.jpg)";
     } else if (weatherID >= 300 && weatherID < 400){
         //drizzle
-        main.style.backgroundImage = "url(./src/img/rain.jpg)";
+        photo.style.backgroundImage = "url(./src/img/rain.jpg)";
     } else if (weatherID >= 500 && weatherID < 600){
         //rain
-        main.style.backgroundImage = "url(./src/img/rain.jpg)";
+        photo.style.backgroundImage = "url(./src/img/rain.jpg)";
     } else if (weatherID >= 600 && weatherID < 700){
         //snow
-        main.style.backgroundImage = "url(./src/img/snow.jpg)";
+        photo.style.backgroundImage = "url(./src/img/snow.jpg)";
     } else if (weatherID >= 700 && weatherID < 800){
         //fog etc.
-        main.style.backgroundImage = "url(./src/img/fog.jpg)";
+        photo.style.backgroundImage = "url(./src/img/fog.jpg)";
     } else if (weatherID == 800){
         //clear sky
-        main.style.backgroundImage = "url(./src/img/clearsky.jpg)";
+        photo.style.backgroundImage = "url(./src/img/clearsky.jpg)";
     } else if (weatherID == 801) {
         //partly cloud
-        main.style.backgroundImage = "url(./src/img/partlycloud.jpg)";
+        photo.style.backgroundImage = "url(./src/img/partlycloud.jpg)";
     } else if (weatherID > 801 && weatherID < 810){
         //clouds
-        main.style.backgroundImage = "url(./src/img/cloud.jpg)";
+        photo.style.backgroundImage = "url(./src/img/cloud.jpg)";
     }
 }
 

@@ -1,11 +1,16 @@
 * {
     font-family: 'Dosis',sans-serif;
+    color: white;
 }
 
 body{
     background-color: blue;
     width: 100vw;
     height: 100vh;
+}
+
+main .photo {
+    background-size: auto 100%;
 }
 
 /*5day styling*/
