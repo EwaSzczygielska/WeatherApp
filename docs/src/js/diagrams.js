@@ -19,22 +19,14 @@ function diagrams(data){
     fetch(url)
         .then(resp => resp.json())
         .then(data1 => {
-            console.log(data1);
-            console.log(temperatureValues);
             dates = data1.list;
-            //console.log(dates);
             for (var i=0; i<dates.length; i=i+3) {
                 var currDate = dates[i];
-                //console.log(currDate.main.temp);
                 temperatureValues.push(currDate.main.temp);
                 pressureValues.push(currDate.main.pressure);
                 humidityValues.push(currDate.main.humidity);
                 datesTable.push(currDate.dt_txt.substring(0, 16));
             }
-            //console.log(datesTable);
-            //console.log(temperatureValues);
-            //console.log(pressureValues);
-            //console.log(humidityValues);
         });
         
         let lineTemperatureChart = new Chart(temperatureChart, {
@@ -57,12 +49,6 @@ function diagrams(data){
     });
 
     setTimeout(function() { lineTemperatureChart.update(); },50);
-    function addData(){
-        //lineTemperatureChart.data.datasets[0].data = temperatureValues; 
-        console.log(lineTemperatureChart.data.datasets[1]);
-        lineTemperatureChart.update();
-    }
-    addData();
 
    let linePressureChart = new Chart(pressureChart, {
         type: 'line',
