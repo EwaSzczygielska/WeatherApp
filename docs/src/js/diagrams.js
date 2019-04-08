@@ -49,7 +49,7 @@ function diagrams(data){
         options:{}
     });
 
-    setTimeout(function() { lineTemperatureChart.update(); },100);
+    setTimeout(function() { lineTemperatureChart.update(); },500);
 
    let linePressureChart = new Chart(pressureChart, {
         type: 'line',
@@ -68,7 +68,7 @@ function diagrams(data){
            },
         options:{}
     });
-    setTimeout(function() { linePressureChart.update(); },100);
+    setTimeout(function() { linePressureChart.update(); },500);
     let lineHumidityChart = new Chart(humidityChart, {
         type: 'line',
         data:{
@@ -86,5 +86,5 @@ function diagrams(data){
            },
         options:{}
     });
-    setTimeout(function() { lineHumidityChart.update(); },100);
+    setTimeout(function() { lineHumidityChart.update(); },500);
 }
