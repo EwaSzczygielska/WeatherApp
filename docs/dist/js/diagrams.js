@@ -1,15 +1,15 @@
 'use strict';
 
 function diagrams(data) {
+    Chart.defaults.global.defaultFontColor = 'white';
     var temperatureChart = document.getElementById('temperatureChart').getContext('2d');
     var pressureChart = document.getElementById('pressureChart').getContext('2d');
     var humidityChart = document.getElementById('humidityChart').getContext('2d');
-    //temperatureChart.parentNode.parentNode.style.width="90px";
     var city = data.name;
     var appID = '7c9de8a35240ee230d96115961a7e4cb';
     var units = 'metric';
     var day = void 0;
-    var dates = void 0;
+    var dates;
     var oneDay = 86400;
     datesTable = [];
     temperatureValues = [];
@@ -21,9 +21,10 @@ function diagrams(data) {
         return resp.json();
     }).then(function (data1) {
         console.log(data1);
+        console.log(temperatureValues);
         dates = data1.list;
         //console.log(dates);
-        for (var i = 0; i < dates.length; i = i + 2) {
+        for (var i = 0; i < dates.length; i = i + 3) {
             var currDate = dates[i];
             //console.log(currDate.main.temp);
             temperatureValues.push(currDate.main.temp);
@@ -44,12 +45,27 @@ function diagrams(data) {
             datasets: [{
                 label: 'Temperature',
                 data: temperatureValues,
-                backgroundColor: 'rgba(0, 0, 60, 0.5)'
+                backgroundColor: 'rgba(255, 255, 255, 0.2)',
+                borderWidth: 2,
+                borderColor: 'white'
 
             }]
         },
+        legend: {
+            fontFamily: "Dosis"
+        },
         options: {}
     });
+
+    setTimeout(function () {
+        lineTemperatureChart.update();
+    }, 50);
+    function addData() {
+        //lineTemperatureChart.data.datasets[0].data = temperatureValues; 
+        console.log(lineTemperatureChart.data.datasets[1]);
+        lineTemperatureChart.update();
+    }
+    addData();
 
     var linePressureChart = new Chart(pressureChart, {
         type: 'line',
@@ -58,12 +74,19 @@ function diagrams(data) {
             datasets: [{
                 label: 'Preassure',
                 data: pressureValues,
-                backgroundColor: 'rgba(0, 0, 60, 0.5)'
+                backgroundColor: 'rgba(255, 255, 255, 0.2)',
+                borderWidth: 2,
+                borderColor: 'white'
             }]
+        },
+        legend: {
+            fontFamily: "Dosis"
         },
         options: {}
     });
-
+    setTimeout(function () {
+        linePressureChart.update();
+    }, 50);
     var lineHumidityChart = new Chart(humidityChart, {
         type: 'line',
         data: {
@@ -71,9 +94,17 @@ function diagrams(data) {
             datasets: [{
                 label: 'Humidity',
                 data: humidityValues,
-                backgroundColor: 'rgba(0, 0, 60, 0.5)'
+                backgroundColor: 'rgba(255, 255, 255, 0.2)',
+                borderWidth: 2,
+                borderColor: 'white'
             }]
+        },
+        legend: {
+            fontFamily: "Dosis"
         },
         options: {}
     });
+    setTimeout(function () {
+        lineHumidityChart.update();
+    }, 50);
 }
