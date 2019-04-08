@@ -1,5 +1,6 @@
 function diagrams(data){
     Chart.defaults.global.defaultFontColor='white';
+    Chart.defaults.global.defaultFontSize=14;
     let temperatureChart = document.getElementById('temperatureChart').getContext('2d');
     let pressureChart = document.getElementById('pressureChart').getContext('2d');
     let humidityChart = document.getElementById('humidityChart').getContext('2d');
@@ -48,7 +49,7 @@ function diagrams(data){
         options:{}
     });
 
-    setTimeout(function() { lineTemperatureChart.update(); },50);
+    setTimeout(function() { lineTemperatureChart.update(); },100);
 
    let linePressureChart = new Chart(pressureChart, {
         type: 'line',
@@ -67,7 +68,7 @@ function diagrams(data){
            },
         options:{}
     });
-    setTimeout(function() { linePressureChart.update(); },50);
+    setTimeout(function() { linePressureChart.update(); },100);
     let lineHumidityChart = new Chart(humidityChart, {
         type: 'line',
         data:{
@@ -85,5 +86,5 @@ function diagrams(data){
            },
         options:{}
     });
-    setTimeout(function() { lineHumidityChart.update(); },50);
+    setTimeout(function() { lineHumidityChart.update(); },100);
 }
