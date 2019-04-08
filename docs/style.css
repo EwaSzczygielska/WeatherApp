@@ -11,6 +11,7 @@ body{
 main .photo {
     color: white;
     background-size: auto 100%;
+    background-position: center center;
 }
 
 /*5day styling*/
