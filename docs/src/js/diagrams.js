@@ -56,6 +56,7 @@ function diagrams(data){
         options:{}
     });
 
+    setTimeout(function() { lineTemperatureChart.update(); },50);
     function addData(){
         //lineTemperatureChart.data.datasets[0].data = temperatureValues; 
         console.log(lineTemperatureChart.data.datasets[1]);
@@ -80,7 +81,7 @@ function diagrams(data){
            },
         options:{}
     });
-
+    setTimeout(function() { linePressureChart.update(); },50);
     let lineHumidityChart = new Chart(humidityChart, {
         type: 'line',
         data:{
@@ -98,4 +99,5 @@ function diagrams(data){
            },
         options:{}
     });
+    setTimeout(function() { lineHumidityChart.update(); },50);
 }
