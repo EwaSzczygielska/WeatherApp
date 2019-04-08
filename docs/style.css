@@ -23,6 +23,14 @@ main .photo {
     padding: 20px;
 }
 
+.temp{
+    display: flex;
+    justify-content: center;
+    flex:1;
+    flex-wrap: nowrap;
+    min-width: 160px;
+}
+
 #temp-val{
     font-size: 150px;
     font-weight: 100;
@@ -31,8 +39,9 @@ main .photo {
 }
 
 #temp-unit{
+    text-align: center;
     position: relative;
-    left: 12px;
+    right: 5px;
     margin: 0;
     font-size: 50px;
     line-height: 1.1;
@@ -52,7 +61,7 @@ main hr{
     border: none;
     background-color: var(--sec-font-color);
     height: 1px;
-    width: 30px;
+    width: 35px;
     margin: 0 auto;
     text-align: center;
 }
