@@ -10,7 +10,7 @@ function currentWeather(data){
     let pressure = data.main.pressure;
     let humidity = data.main.humidity;
     windSpeed = Math.round(data.wind.speed * 3.6);
-    let weatherID = data.weather.id;
+    let weatherID = data.weather[0].id;
 
     let feelsLike = Math.round(13.12 + 0.6215 * temperature - 11.37 * Math.pow(windSpeed, 0.16) + 0.3965 * temperature * Math.pow(windSpeed, 0.16));
     tempVal.textContent = Math.round(temperature);
