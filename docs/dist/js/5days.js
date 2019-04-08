@@ -10,7 +10,7 @@ function fiveDays(data) {
     var data;
     var datax;
     var datay;
-    var oneDay = 86400;
+    var oneDay = 86400000;
     var newDate;
     var newDate1;
     var tempMax;
@@ -38,7 +38,7 @@ function fiveDays(data) {
     fetch(url).then(function (resp) {
         return resp.json();
     }).then(function (data1) {
-        day = data1.list[0].dt;
+        day = Date.now();
         for (i = 0; i < 5; i++) {
             var iconplay = function iconplay(k) {
                 skycons.add(iconx[i], Skycons[k]);
@@ -46,7 +46,7 @@ function fiveDays(data) {
             };
 
             day = day + oneDay;
-            newDate = new Date(day * 1000);
+            newDate = new Date(day);
             dayofweek[i].innerHTML = weekDay[newDate.getDay()];
             datax = newDate.getDate();
             datay = months[newDate.getMonth()];
