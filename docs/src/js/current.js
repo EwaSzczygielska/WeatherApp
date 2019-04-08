@@ -13,6 +13,13 @@ function currentWeather(data){
     let weatherID = data.weather[0].id;
 
     let feelsLike = Math.round(13.12 + 0.6215 * temperature - 11.37 * Math.pow(windSpeed, 0.16) + 0.3965 * temperature * Math.pow(windSpeed, 0.16));
+    
+    let descrArray = description.split(" ");
+    for (var i=0; i<descrArray.length; i++){
+        descrArray[i] = descrArray[i][0].toUpperCase() + descrArray[i].slice(1,descrArray[i].length);
+    }
+    description = descrArray.join(" ");
+    
     tempVal.textContent = Math.round(temperature);
     sky.textContent = description;
     infoList.innerHTML =
