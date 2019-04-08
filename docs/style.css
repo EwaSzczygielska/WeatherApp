@@ -1,81 +1,30 @@
-:root{
-    --main-font-color: white;
-    --sec-font-color: #d9d9d9;
-}
-
 * {
-    font-family: 'Dosis',sans-serif;
-    padding: 0;
-    margin: 0;
+    font-family: 'Dosis', sans-serif;
+    color: white;
 }
 
-body{
+body {
     background-color: blue;
     width: 100vw;
     height: 100vh;
 }
 
-/*current styling*/
 main .photo {
-    color: var(--main-font-color);
+    color: white;
     background-size: auto 100%;
     background-position: center center;
-    padding: 20px;
 }
 
-.temp{
-    display: flex;
-    justify-content: center;
-    flex:1;
-    flex-wrap: nowrap;
-    min-width: 160px;
+#city {
+    background-color: rgba(255, 255, 255, 0.5);
 }
 
-#temp-val{
-    font-size: 150px;
-    font-weight: 100;
-    text-align: right;
-    line-height: 0.8;
+#nameofcity {
+    text-transform: uppercase;
 }
-
-#temp-unit{
-    text-align: center;
-    position: relative;
-    right: 5px;
-    margin: 0;
-    font-size: 50px;
-    line-height: 1.1;
-}
-
-#temp-unit-change {
-    color: var(--sec-font-color);
-    margin-top: 4px;
-    text-align: center;
-}
-
-#sky{
-    font-size: 30px;
-}
-
-main hr{
-    border: none;
-    background-color: var(--sec-font-color);
-    height: 1px;
-    width: 35px;
-    margin: 0 auto;
-    text-align: center;
-}
-
-.info-box #info-list{
-    list-style: none;
-    padding: 0;
-}
-/*end od current styling*/
-
 
 /*5day styling*/
-.day{
-    border: 3px solid red;
+.day {
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
@@ -83,25 +32,87 @@ main hr{
     align-items: center;
     line-height: 1em;
 }
-.dayofweek{
+
+.dayofweek {
     text-transform: uppercase;
-    font-weight: 700;
-}
-.descr{
-    text-align: center;
-}
-.icon{
-    width: 100%;
-    height: auto;
+    font-weight: 600;
+    font-size: 1.2em;
 }
 
-.max-temp:before{
+.date {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.descr {
+    text-align: center;
+}
+
+.icon {
+    width: 90%;
+    height: auto;
+    padding: 5%;
+}
+
+.max-temp:before {
     content: "Max temp. ";
+    font-size: 0.5em;
+}
+
+.max-temp {
+    font-size: 2em;
+}
+
+.min-temp {
+    font-size: 2em;
+    color: rgba(255, 255, 255, 0.6);
 }
 
 .min-temp:before {
     content: "Min temp. ";
+    font-size: 0.5em;
 }
+
+.hum {
+    color: rgba(255, 255, 255, 0.7);
+    padding: 10%;
+}
+
+.descr {
+    padding: 2%;
+}
+
+.fivedays {
+    padding-top: 2%;
+    padding-bottom: 2%;
+}
+
 /*end od 5day styling*/
 
+#temp-val {
+    font-size: 90px;
+}
 
+#temp-unit {
+    font-size: 40px;
+}
+
+#sky {
+    font-size: 30px;
+}
+
+main hr {
+    border-color: white;
+    width: 20px;
+}
+
+main .current div {
+    border: 3px solid red;
+}
+
+main .current div div {
+    border: 3px solid blue;
+}
+
+main .current .info-box #info-list {
+    list-style: none;
+}
