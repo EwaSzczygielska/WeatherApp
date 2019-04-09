@@ -1,6 +1,8 @@
 :root {
     --main-font-color: white;
     --sec-font-color: #bfbfbf;
+    --color3: rgba(255, 255, 255, 0.7);
+    --color4: rgba(128, 128, 128, 0.5);
     font-size: 16px;
 }
 
@@ -31,11 +33,16 @@ main .photo {
 }
 
 #city {
-    background-color: rgba(255, 255, 255, 0.5);
+    background-color: var(--color3);
 }
 
 #nameofcity {
     text-transform: uppercase;
+}
+
+#submitCity {
+    background-color: var(--color4);
+    border: 0;
 }
 
 /*current styling*/
@@ -99,7 +106,7 @@ main hr {
 }
 
 .date {
-    color: rgba(255, 255, 255, 0.6);
+    color: var(--color3);
 }
 
 .descr {
@@ -118,7 +125,7 @@ main hr {
 }
 
 .min-temp {
-    color: rgba(255, 255, 255, 0.6);
+    color: var(--color3);
 }
 
 .min-temp:before {
@@ -127,7 +134,7 @@ main hr {
 }
 
 .hum {
-    color: rgba(255, 255, 255, 0.7);
+    color:var(--color3);
     padding: 10%;
 }
 
