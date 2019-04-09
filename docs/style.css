@@ -142,7 +142,7 @@ main hr {
 
 .fas,
 .humidity {
-    font-size: 1em;
+    font-size: .5em;
 }
 
 /*end od 5day styling*/
@@ -190,13 +190,11 @@ main hr {
 
     .max-temp,
     .min-temp,
-    #nameofcity {
+    #nameofcity,
+    .hum {
         font-size: 1rem;
     }
 
-    .hum {
-        font-size: 0.5rem;
-    }
 }
 
 @media screen and (min-width: 768px) and (max-width: 991px) {
@@ -210,12 +208,9 @@ main hr {
 
     .max-temp,
     .min-temp,
-    #nameofcity {
-        font-size: 1.3rem;
-    }
-
+    #nameofcity,
     .hum {
-        font-size: 0.5rem;
+        font-size: 1.3rem;
     }
 }
 
@@ -230,13 +225,11 @@ main hr {
 
     .max-temp,
     .min-temp,
-    #nameofcity {
+    #nameofcity,
+    .hum {
         font-size: 1.5rem;
     }
 
-    .hum {
-        font-size: 0.5rem;
-    }
 }
 
 @media only screen and (min-width: 1200px) {
@@ -250,11 +243,8 @@ main hr {
 
     .max-temp,
     .min-temp,
-    #nameofcity {
-        font-size: 2rem;
-    }
-
+    #nameofcity,
     .hum {
-        font-size: 0.8rem;
+        font-size: 2rem;
     }
 }
