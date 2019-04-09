@@ -35,6 +35,10 @@ body {
 
 #city {
     background-color: var(--color3);
+    width: 80%;
+    height: 40px;
+    margin-top:20px;
+    margin-left:20px;
 }
 
 #nameofcity {
@@ -54,7 +58,8 @@ body {
 
 #submitCity {
     background-color: var(--color4);
-    border: 0;
+    margin-top: 20px;
+    margin-right: 10px;
 }
 
 /*current styling*/
