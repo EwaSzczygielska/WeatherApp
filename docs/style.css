@@ -3,6 +3,7 @@
     --sec-font-color: #bfbfbf;
     --color3: rgba(255, 255, 255, 0.7);
     --color4: rgba(128, 128, 128, 0.5);
+    --color5: rgba(255, 255, 255, 0.3);
     font-size: 16px;
 }
 
@@ -43,6 +44,13 @@ main .photo {
     font-weight: 600;
     font-size: 50px;
 }
+
+#nameofcityback {
+    background-color: var(--color5);
+    padding:1%;
+}
+
+
 
 #submitCity {
     background-color: var(--color4);
