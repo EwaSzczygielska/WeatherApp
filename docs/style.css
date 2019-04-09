@@ -46,8 +46,14 @@ main .photo {
 }
 
 /*current styling*/
-.current {
-    margin-bottom: 30px;
+.current{
+    margin: 0 10% 30px 10% !important;
+}
+
+.temp-row{
+    flex-wrap: nowrap;
+    min-width: 160px;
+    margin-bottom: 20px;
 }
 
 #temp-val {
@@ -58,8 +64,9 @@ main .photo {
 }
 
 #temp-unit {
+    text-align: center;
     position: relative;
-    left: 12px;
+    right: 5px;
     margin: 0;
     font-size: 50px;
     line-height: 1.1;
@@ -87,6 +94,12 @@ main hr {
 .info-box #info-list {
     list-style: none;
     padding: 0;
+}
+
+.info-box #info-list li{
+    list-style: none;
+    padding: 0;
+    margin: 5px;
 }
 
 /*end od current styling*/
@@ -146,12 +159,9 @@ main hr {
     padding-top: 2%;
     padding-bottom: 2%;
 }
-
-.fas,
-.humidity {
-    font-size: .5em;
+.fas, .humidity{
+    font-size: 1em;
 }
-
 /*end od 5day styling*/
 @media screen and (min-width: 0px) and (max-width: 575px) {
     .dayofweek {
@@ -162,9 +172,14 @@ main hr {
         font-size: 1.2rem;
     }
 
-    .max-temp,
-    .min-temp,
-    #nameofcity,
+    .max-temp {
+        font-size: 2rem;
+    }
+
+    .min-temp {
+        font-size: 2rem;
+    }
+
     .hum {
         font-size: 2rem;
     }
@@ -173,8 +188,7 @@ main hr {
         width: 70%;
         height: auto;
     }
-
-    .day {
+    .day{
         padding: 5%;
     }
 
@@ -192,13 +206,17 @@ main hr {
         font-size: .9rem;
     }
 
-    .max-temp,
-    .min-temp,
-    #nameofcity,
-    .hum {
+    .max-temp {
         font-size: 1rem;
     }
 
+    .min-temp {
+        font-size: 1rem;
+    }
+
+    .hum {
+        font-size: 0.5rem;
+    }
 }
 
 @media screen and (min-width: 768px) and (max-width: 991px) {
@@ -210,11 +228,16 @@ main hr {
         font-size: .9rem;
     }
 
-    .max-temp,
-    .min-temp,
-    #nameofcity,
-    .hum {
+    .max-temp {
         font-size: 1.3rem;
+    }
+
+    .min-temp {
+        font-size: 1.3rem;
+    }
+
+    .hum {
+        font-size: 0.5rem;
     }
 }
 
@@ -227,13 +250,13 @@ main hr {
         font-size: 1rem;
     }
 
-    .max-temp,
-    .min-temp,
-    #nameofcity,
-    .hum {
+    .max-temp, .min-temp {
         font-size: 1.5rem;
     }
 
+    .hum {
+        font-size: 0.5rem;
+    }
 }
 
 @media only screen and (min-width: 1200px) {
@@ -245,10 +268,15 @@ main hr {
         font-size: 1.2rem;
     }
 
-    .max-temp,
-    .min-temp,
-    #nameofcity,
-    .hum {
+    .max-temp {
         font-size: 2rem;
+    }
+
+    .min-temp {
+        font-size: 2rem;
+    }
+
+    .hum {
+        font-size: 0.8rem;
     }
 }
