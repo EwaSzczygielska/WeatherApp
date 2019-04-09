@@ -85,7 +85,6 @@ tempUnitChange.addEventListener('click', function(){
     var feelTemp = tempFeelsLikeValue.textContent;
     var windSpeed = windSpeedValue.textContent;
     
-
     if (unit === "°C"){
         temp = Math.round(temp * 9 / 5 + 32);
         feelTemp = Math.round(feelTemp * 9 / 5 + 32);
