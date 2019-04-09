@@ -36,7 +36,7 @@ body {
 
 #city {
     background-color: var(--color3);
-    width: 60%;
+    width: 60vw;
     height: 40px;
     margin-top: 20px;
     margin-left: 20px;
@@ -73,7 +73,7 @@ body {
 }
 
 #temp-val {
-    font-size: 150px;
+    font-size: 145px;
     font-weight: 100;
     text-align: right;
     line-height: 0.8;
@@ -99,6 +99,7 @@ body {
 }
 
 #sky {
+    margin-top: 5px;
     font-size: 30px;
 }
 
@@ -187,6 +188,10 @@ main .current hr {
 .humidity {
     font-size: .5em;
 }
+  .map {
+      height: 400px;
+      width: 100vw;
+  }
 
 /*end od 5day styling*/
 @media screen and (min-width: 0px) and (max-width: 575px) {
