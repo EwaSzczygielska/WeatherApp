@@ -1,14 +1,12 @@
-<<<<<<< HEAD
-=======
-:root{
+:root {
     --main-font-color: white;
     --sec-font-color: #bfbfbf;
 }
 
->>>>>>> parent of 50e3fb4... Update style.css
+
 * {
     font-family: 'Dosis', sans-serif;
-    color: white;
+    color: var(--main-font-color);
 }
 
 body {
@@ -30,6 +28,47 @@ main .photo {
 #nameofcity {
     text-transform: uppercase;
 }
+
+/*current styling*/
+#temp-val {
+    font-size: 150px;
+    font-weight: 100;
+    text-align: right;
+    line-height: 0.8;
+}
+
+#temp-unit {
+    position: relative;
+    left: 12px;
+    margin: 0;
+    font-size: 50px;
+    line-height: 1.1;
+}
+
+#temp-unit-change {
+    color: var(--sec-font-color);
+    margin-top: 4px;
+    text-align: center;
+}
+
+#sky {
+    font-size: 30px;
+}
+
+main hr {
+    border: none;
+    background-color: var(--sec-font-color);
+    height: 1px;
+    width: 30px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.info-box #info-list {
+    list-style: none;
+    padding: 0;
+}
+/*end od current styling*/
 
 /*5day styling*/
 .day {
@@ -93,34 +132,4 @@ main .photo {
     padding-top: 2%;
     padding-bottom: 2%;
 }
-
 /*end od 5day styling*/
-
-#temp-val {
-    font-size: 90px;
-}
-
-#temp-unit {
-    font-size: 40px;
-}
-
-#sky {
-    font-size: 30px;
-}
-
-main hr {
-    border-color: white;
-    width: 20px;
-}
-
-main .current div {
-    border: 3px solid red;
-}
-
-main .current div div {
-    border: 3px solid blue;
-}
-
-main .current .info-box #info-list {
-    list-style: none;
-}
