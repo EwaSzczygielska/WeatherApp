@@ -139,9 +139,12 @@ main hr {
     padding-top: 2%;
     padding-bottom: 2%;
 }
-.fas, .humidity{
+
+.fas,
+.humidity {
     font-size: 1em;
 }
+
 /*end od 5day styling*/
 @media screen and (min-width: 0px) and (max-width: 575px) {
     .dayofweek {
@@ -152,11 +155,9 @@ main hr {
         font-size: 1.2rem;
     }
 
-    .max-temp {
-        font-size: 2rem;
-    }
-
-    .min-temp {
+    .max-temp,
+    .min-temp,
+    #nameofcity {
         font-size: 2rem;
     }
 
@@ -168,7 +169,8 @@ main hr {
         width: 70%;
         height: auto;
     }
-    .day{
+
+    .day {
         padding: 5%;
     }
 
@@ -186,11 +188,9 @@ main hr {
         font-size: .9rem;
     }
 
-    .max-temp {
-        font-size: 1rem;
-    }
-
-    .min-temp {
+    .max-temp,
+    .min-temp,
+    #nameofcity {
         font-size: 1rem;
     }
 
@@ -208,11 +208,9 @@ main hr {
         font-size: .9rem;
     }
 
-    .max-temp {
-        font-size: 1.3rem;
-    }
-
-    .min-temp {
+    .max-temp,
+    .min-temp,
+    #nameofcity {
         font-size: 1.3rem;
     }
 
@@ -230,7 +228,9 @@ main hr {
         font-size: 1rem;
     }
 
-    .max-temp, .min-temp {
+    .max-temp,
+    .min-temp,
+    #nameofcity {
         font-size: 1.5rem;
     }
 
@@ -248,11 +248,9 @@ main hr {
         font-size: 1.2rem;
     }
 
-    .max-temp {
-        font-size: 2rem;
-    }
-
-    .min-temp {
+    .max-temp,
+    .min-temp,
+    #nameofcity {
         font-size: 2rem;
     }
 
