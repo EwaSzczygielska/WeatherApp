@@ -179,7 +179,8 @@ main .current hr {
     }
 
     .max-temp,
-    .min-tem, .hum {
+    .min-tem,
+    .hum {
         font-size: 2rem;
     }
 
