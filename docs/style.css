@@ -37,8 +37,8 @@ body {
     background-color: var(--color3);
     width: 80%;
     height: 40px;
-    margin-top:20px;
-    margin-left:20px;
+    margin-top: 20px;
+    margin-left: 20px;
 }
 
 #nameofcity {
@@ -46,15 +46,12 @@ body {
     text-align: center;
     position: relative;
     font-weight: 600;
-    font-size: 50px;
 }
 
 #nameofcityback {
     background-color: var(--color5);
-    padding:1%;
+    padding: 1%;
 }
-
-
 
 #submitCity {
     background-color: var(--color4);
@@ -213,6 +210,11 @@ main .current hr {
     .hum {
         padding: 2%;
     }
+
+    #nameofcity {
+        font-size: 2rem;
+    }
+
 }
 
 @media screen and (min-width: 576px) and (max-width: 767px) {
@@ -228,6 +230,9 @@ main .current hr {
     .min-temp,
     .hum {
         font-size: 1.1rem;
+    }
+    #nameofcity {
+        font-size: 2.4rem;
     }
 }
 
@@ -245,6 +250,9 @@ main .current hr {
     .hum {
         font-size: 1.3rem;
     }
+    #nameofcity {
+        font-size: 2.8rem;
+    }
 }
 
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
@@ -261,6 +269,9 @@ main .current hr {
     .hum {
         font-size: 1.5rem;
     }
+    #nameofcity {
+        font-size: 3.6rem;
+    }
 }
 
 @media only screen and (min-width: 1200px) {
@@ -276,5 +287,8 @@ main .current hr {
     .min-temp,
     .hum {
         font-size: 2rem;
+    }
+    #nameofcity {
+        font-size: 4rem;
     }
 }
