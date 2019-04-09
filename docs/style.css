@@ -1,3 +1,11 @@
+<<<<<<< HEAD
+=======
+:root{
+    --main-font-color: white;
+    --sec-font-color: #bfbfbf;
+}
+
+>>>>>>> parent of 50e3fb4... Update style.css
 * {
     font-family: 'Dosis', sans-serif;
     color: white;
