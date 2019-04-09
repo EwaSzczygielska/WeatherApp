@@ -157,12 +157,9 @@ main hr {
 
     .max-temp,
     .min-temp,
-    #nameofcity {
-        font-size: 2rem;
-    }
-
+    #nameofcity,
     .hum {
-        font-size: 0.5rem;
+        font-size: 2rem;
     }
 
     .icon {
