@@ -1,12 +1,21 @@
 :root {
     --main-font-color: white;
     --sec-font-color: #bfbfbf;
+    font-size: 16px;
 }
-
 
 * {
     font-family: 'Dosis', sans-serif;
     color: var(--main-font-color);
+    text-decoration: none;
+    font-size: 16px;
+    list-style: none;
+    line-height: 1;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    gap: 0;
 }
 
 body {
@@ -16,7 +25,7 @@ body {
 }
 
 main .photo {
-    color: white;
+    color: var(--main-font-color);
     background-size: auto 100%;
     background-position: center center;
 }
@@ -30,7 +39,7 @@ main .photo {
 }
 
 /*current styling*/
-.current{
+.current {
     margin-bottom: 30px;
 }
 
@@ -72,6 +81,7 @@ main hr {
     list-style: none;
     padding: 0;
 }
+
 /*end od current styling*/
 
 /*5day styling*/
@@ -81,13 +91,11 @@ main hr {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    line-height: 1em;
 }
 
 .dayofweek {
     text-transform: uppercase;
     font-weight: 600;
-    font-size: 1.2em;
 }
 
 .date {
@@ -109,12 +117,7 @@ main hr {
     font-size: 0.5em;
 }
 
-.max-temp {
-    font-size: 2em;
-}
-
 .min-temp {
-    font-size: 2em;
     color: rgba(255, 255, 255, 0.6);
 }
 
@@ -136,4 +139,124 @@ main hr {
     padding-top: 2%;
     padding-bottom: 2%;
 }
+.fas, .humidity{
+    font-size: 1em;
+}
 /*end od 5day styling*/
+@media screen and (min-width: 0px) and (max-width: 575px) {
+    .dayofweek {
+        font-size: 1.2rem;
+    }
+
+    .date {
+        font-size: 1.2rem;
+    }
+
+    .max-temp {
+        font-size: 2rem;
+    }
+
+    .min-temp {
+        font-size: 2rem;
+    }
+
+    .hum {
+        font-size: 0.5rem;
+    }
+
+    .icon {
+        width: 70%;
+        height: auto;
+    }
+    .day{
+        padding: 5%;
+    }
+
+    .hum {
+        padding: 2%;
+    }
+}
+
+@media screen and (min-width: 576px) and (max-width: 767px) {
+    .dayofweek {
+        font-size: 1rem;
+    }
+
+    .date {
+        font-size: .9rem;
+    }
+
+    .max-temp {
+        font-size: 1rem;
+    }
+
+    .min-temp {
+        font-size: 1rem;
+    }
+
+    .hum {
+        font-size: 0.5rem;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 991px) {
+    .dayofweek {
+        font-size: 1.1rem;
+    }
+
+    .date {
+        font-size: .9rem;
+    }
+
+    .max-temp {
+        font-size: 1.3rem;
+    }
+
+    .min-temp {
+        font-size: 1.3rem;
+    }
+
+    .hum {
+        font-size: 0.5rem;
+    }
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+    .dayofweek {
+        font-size: 1.2rem;
+    }
+
+    .date {
+        font-size: 1rem;
+    }
+
+    .max-temp, .min-temp {
+        font-size: 1.5rem;
+    }
+
+    .hum {
+        font-size: 0.5rem;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    .dayofweek {
+        font-size: 1.5rem;
+    }
+
+    .date {
+        font-size: 1.2rem;
+    }
+
+    .max-temp {
+        font-size: 2rem;
+    }
+
+    .min-temp {
+        font-size: 2rem;
+    }
+
+    .hum {
+        font-size: 0.8rem;
+    }
+}
