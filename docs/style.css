@@ -38,6 +38,10 @@ main .photo {
 
 #nameofcity {
     text-transform: uppercase;
+    text-align: center;
+    position: relative;
+    
+    font-size: 50px;
 }
 
 #submitCity {
