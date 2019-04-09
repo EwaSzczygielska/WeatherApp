@@ -24,7 +24,7 @@ function currentWeather(data){
     infoList.innerHTML =
     `
     <div class="row">
-        <li class="col-sm-6 col-md-3 col-xl-2 "><span style="color:var(--sec-font-color);">Feels Like</span> &nbsp<span id="feel-temp-value">${feelsLike}</span><span id="feel-temp-unit">°C</span></li>          
+        <li class="col-sm-6 col-md-3 col-xl-2 "><span style="color:var(--sec-font-color);">Feels&nbspLike</span>&nbsp&nbsp<span id="feel-temp-value">${feelsLike}</span><span id="feel-temp-unit">°C</span></li>          
         <li class="col-sm-6 col-md-4 col-xl-3"><span style="color:var(--sec-font-color);">Pressure</span> &nbsp${pressure}&nbsphPa</li>
     </div>
     <div class="row">
