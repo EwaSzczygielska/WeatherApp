@@ -71,10 +71,14 @@ body {
 }
 
 #temp-val {
-    font-size: 150px;
+    font-size: 145px;
     font-weight: 100;
     text-align: right;
     line-height: 0.8;
+}
+
+.temp-units-div{
+    margin-left: 2px;
 }
 
 #temp-unit {
@@ -93,6 +97,7 @@ body {
 }
 
 #sky {
+    margin-top: 5px;
     font-size: 30px;
 }
 
@@ -103,6 +108,10 @@ main .current hr {
     width: 30px;
     margin: 0 auto;
     text-align: center;
+}
+
+.info-box{
+    padding-left: 10px;
 }
 
 .info-box #info-list {
