@@ -71,7 +71,7 @@ body {
 }
 
 #temp-val {
-    font-size: 150px;
+    font-size: 145px;
     font-weight: 100;
     text-align: right;
     line-height: 0.8;
@@ -97,6 +97,7 @@ body {
 }
 
 #sky {
+    margin-top: 5px;
     font-size: 30px;
 }
 
