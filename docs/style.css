@@ -89,6 +89,12 @@ main hr {
     padding: 0;
 }
 
+.info-box #info-list li{
+    list-style: none;
+    padding: 0;
+    margin: 5px;
+}
+
 /*end od current styling*/
 
 /*5day styling*/
