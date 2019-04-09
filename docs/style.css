@@ -35,7 +35,7 @@ body {
 
 #city {
     background-color: var(--color3);
-    width: 60%;
+    width: 60vw;
     height: 40px;
     margin-top: 20px;
     margin-left: 20px;
@@ -177,6 +177,10 @@ main .current hr {
 .humidity {
     font-size: .5em;
 }
+  .map {
+      height: 400px;
+      width: 100vw;
+  }
 
 /*end od 5day styling*/
 @media screen and (min-width: 0px) and (max-width: 575px) {
