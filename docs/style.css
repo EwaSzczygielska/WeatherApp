@@ -30,6 +30,10 @@ main .photo {
 }
 
 /*current styling*/
+.current{
+    margin-bottom: 30px;
+}
+
 #temp-val {
     font-size: 150px;
     font-weight: 100;
