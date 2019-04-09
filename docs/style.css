@@ -82,7 +82,7 @@ main .photo {
     font-size: 30px;
 }
 
-main.current hr {
+main .current hr {
     border: none;
     background-color: var(--sec-font-color);
     height: 1px;
