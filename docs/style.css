@@ -40,7 +40,7 @@ main .photo {
     text-transform: uppercase;
     text-align: center;
     position: relative;
-
+    font-weight: 600;
     font-size: 50px;
 }
 
