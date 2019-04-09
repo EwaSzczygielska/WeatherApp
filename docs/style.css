@@ -102,8 +102,7 @@ main .current hr {
 
 .info-box #info-list li {
     list-style: none;
-    padding: 0;
-    margin: 5px;
+    margin: 5px 0;
 }
 
 /*end od current styling*/
