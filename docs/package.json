@@ -18,6 +18,9 @@
   "scripts": {
     "build": "babel --presets es2015 src -d dist"
   },
+    "scripts": {
+    "start": "node index.js"
+  },
   "author": "",
   "license": "ISC",
   "dependencies": {
