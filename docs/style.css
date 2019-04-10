@@ -28,6 +28,14 @@ body {
     box-sizing: border-box;
 }
 
+footer {
+    text-align: center;
+    height: 1vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .photo {
     color: var(--main-font-color);
     background-size: contain 100%;
@@ -59,12 +67,11 @@ body {
     background-color: var(--color4);
     margin-top: 20px;
     margin-right: 10px;
-    border:0;
+    border: 0;
 }
 
 #city:focus,
-#submitCity:focus
- {
+#submitCity:focus {
     border-color: var(--color5);
     box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px var(--color5);
     outline: 0 none;
@@ -88,7 +95,7 @@ body {
     line-height: 0.8;
 }
 
-.temp-units-div{
+.temp-units-div {
     margin-left: 2px;
 }
 
@@ -121,7 +128,7 @@ main .current hr {
     text-align: center;
 }
 
-.info-box{
+.info-box {
     padding-left: 10px;
 }
 
@@ -197,10 +204,11 @@ main .current hr {
 .humidity {
     font-size: .5em;
 }
-  .map {
-      height: 400px;
-      width: 100vw;
-  }
+
+.map {
+    height: 400px;
+    width: 100vw;
+}
 
 /*end od 5day styling*/
 @media screen and (min-width: 0px) and (max-width: 575px) {
@@ -255,6 +263,7 @@ main .current hr {
     .hum {
         font-size: 1.1rem;
     }
+
     #nameofcity {
         font-size: 2.4rem;
     }
@@ -274,6 +283,7 @@ main .current hr {
     .hum {
         font-size: 1.3rem;
     }
+
     #nameofcity {
         font-size: 2.8rem;
     }
@@ -293,6 +303,7 @@ main .current hr {
     .hum {
         font-size: 1.5rem;
     }
+
     #nameofcity {
         font-size: 3.6rem;
     }
@@ -312,6 +323,7 @@ main .current hr {
     .hum {
         font-size: 2rem;
     }
+
     #nameofcity {
         font-size: 4rem;
     }
